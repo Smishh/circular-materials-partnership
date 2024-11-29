@@ -22,10 +22,6 @@ export default {
       }
     },
     extend: {
-      fontFamily: {
-        sans: ['Source Sans Pro', 'sans-serif'],
-        display: ['Playfair Display', 'serif'],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -33,11 +29,11 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#2B4B6B",
+          DEFAULT: "#2B4B6B", // Earth blue from logo
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#0D6832",
+          DEFAULT: "#0D6832", // Forest green from logo
           foreground: "#FFFFFF",
         },
         destructive: {
