@@ -40,7 +40,7 @@ const Index = () => {
               Welcome to CMIG
             </span>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-              Circular Materials in Infrastructure
+              Circular Materials and Infrastructure Group
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               Engineering sustainable solutions for tomorrow's infrastructure
