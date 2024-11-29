@@ -22,6 +22,9 @@ export default {
       }
     },
     extend: {
+      fontFamily: {
+        sans: ['Aptos Narrow', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -29,11 +32,11 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#2B4B6B", // Earth blue from logo
+          DEFAULT: "#2B4B6B",
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#0D6832", // Forest green from logo
+          DEFAULT: "#0D6832",
           foreground: "#FFFFFF",
         },
         destructive: {
