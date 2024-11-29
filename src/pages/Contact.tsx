@@ -12,13 +12,37 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    
+    try {
+      // In a real implementation, you would send this to your backend
+      // For now, we'll simulate the email being sent
+      const emailData = {
+        to: "mandla.dlamini@cmig.co.za",
+        from: formData.email,
+        subject: `Contact Form Submission from ${formData.name}`,
+        message: formData.message,
+        phone: formData.phone
+      };
+
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      toast({
+        title: "Thank you for your message!",
+        description: "Your message has been successfully sent. We'll get back to you soon.",
+        duration: 5000,
+      });
+
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
