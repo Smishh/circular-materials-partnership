@@ -34,7 +34,7 @@ const Index = () => {
         <div className="container mx-auto text-center z-10">
           <div ref={addToRefs} className="reveal">
             <img src="/lovable-uploads/66119aab-eb70-440d-bc5f-bcdb89a46a63.png" alt="CMIG Logo" className="w-32 h-32 mx-auto mb-6" />
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-primary">
+            <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 tracking-tight text-primary">
               Circular Materials and<br />Infrastructure Group
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
@@ -51,7 +51,7 @@ const Index = () => {
       <section className="py-24 bg-white px-4">
         <div className="container mx-auto">
           <div ref={addToRefs} className="reveal text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-primary">Our Services</h2>
+            <h2 className="font-display text-4xl font-bold mb-4 text-primary">Our Services</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Comprehensive solutions for sustainable infrastructure and materials engineering
             </p>
@@ -96,7 +96,7 @@ const Index = () => {
                 className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
               >
                 <div className="mb-4 text-secondary">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">{service.title}</h3>
+                <h3 className="font-display text-xl font-semibold mb-2 text-primary">{service.title}</h3>
                 <p className="text-muted-foreground">{service.description}</p>
               </div>
             ))}
@@ -108,7 +108,7 @@ const Index = () => {
       <section className="py-24 bg-accent px-4">
         <div className="container mx-auto text-center">
           <div ref={addToRefs} className="reveal">
-            <h2 className="text-4xl font-bold mb-6 text-primary">Contact Us</h2>
+            <h2 className="font-display text-4xl font-bold mb-6 text-primary">Contact Us</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
               Ready to transform your infrastructure with sustainable solutions? Get in touch with our team.
             </p>
