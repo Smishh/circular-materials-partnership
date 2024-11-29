@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://use.typekit.net/[YOUR-KIT-CODE].css'); /* Note: Aptos Narrow requires Adobe Fonts subscription */
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +9,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-['Aptos_Narrow'];
+    @apply bg-background text-foreground font-['Inter'];
     -webkit-font-smoothing: antialiased;
   }
 }

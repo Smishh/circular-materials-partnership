@@ -23,7 +23,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Aptos Narrow', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
