@@ -29,24 +29,24 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#333333",
+          DEFAULT: "#2B4B6B", // Earth blue from logo
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#F5F5F5",
-          foreground: "#333333",
+          DEFAULT: "#0D6832", // Forest green from logo
+          foreground: "#FFFFFF",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "#F0F0F0",
-          foreground: "#666666",
+          DEFAULT: "#E8EDF2",
+          foreground: "#2B4B6B",
         },
         accent: {
-          DEFAULT: "#E5E5E5",
-          foreground: "#333333",
+          DEFAULT: "#E5F0E9",
+          foreground: "#0D6832",
         },
       },
       keyframes: {

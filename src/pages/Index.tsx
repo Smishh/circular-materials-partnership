@@ -30,20 +30,20 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-white to-[#F5F9FF] px-4">
+      <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-white to-[#E8EDF2] px-4">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 bg-[url('/lovable-uploads/3d258ab7-eefd-4ba2-8932-bff60a5cd813.png')] bg-cover bg-center opacity-10" />
         </div>
         <div className="container mx-auto text-center z-10">
           <div ref={addToRefs} className="reveal">
-            <img src="/lovable-uploads/394658f0-7248-4433-bb09-9af484b2a59c.png" alt="CMIG Logo" className="w-32 h-32 mx-auto mb-6" />
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-[#1A4D2E]">
+            <img src="/lovable-uploads/66119aab-eb70-440d-bc5f-bcdb89a46a63.png" alt="CMIG Logo" className="w-32 h-32 mx-auto mb-6" />
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-primary">
               Circular Materials and<br />Infrastructure Group
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Engineering sustainable solutions for tomorrow's infrastructure. We offer comprehensive services in design, maintenance, materials, and processes for manufacturing, construction, and the built environment.
             </p>
-            <button className="bg-[#1A4D2E] text-white px-8 py-3 rounded-lg hover:bg-[#2E8B57] transition-colors">
+            <button className="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary transition-colors">
               Contact Us
             </button>
           </div>
@@ -54,7 +54,7 @@ const Index = () => {
       <section className="py-24 bg-white px-4">
         <div className="container mx-auto">
           <div ref={addToRefs} className="reveal text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-[#1A4D2E]">Our Services</h2>
+            <h2 className="text-4xl font-bold mb-4 text-primary">Our Services</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Comprehensive solutions for sustainable infrastructure and materials engineering
             </p>
@@ -96,10 +96,10 @@ const Index = () => {
               <div
                 key={index}
                 ref={addToRefs}
-                className="reveal p-6 rounded-xl bg-[#F8FAFC] hover:bg-[#E8F6EF] transition-colors hover-lift"
+                className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
               >
-                <div className="mb-4 text-[#1A4D2E]">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2 text-[#1A4D2E]">{service.title}</h3>
+                <div className="mb-4 text-secondary">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2 text-primary">{service.title}</h3>
                 <p className="text-muted-foreground">{service.description}</p>
               </div>
             ))}
@@ -108,19 +108,19 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-[#E8F6EF] px-4">
+      <section className="py-24 bg-accent px-4">
         <div className="container mx-auto text-center">
           <div ref={addToRefs} className="reveal">
-            <h2 className="text-4xl font-bold mb-6 text-[#1A4D2E]">Contact Us</h2>
+            <h2 className="text-4xl font-bold mb-6 text-primary">Contact Us</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
               Ready to transform your infrastructure with sustainable solutions? Get in touch with our team.
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-8 max-w-2xl mx-auto">
-              <a href="mailto:info@cmig.co.za" className="flex items-center justify-center gap-2 text-[#1A4D2E] hover:text-[#2E8B57]">
+              <a href="mailto:info@cmig.co.za" className="flex items-center justify-center gap-2 text-secondary hover:text-primary transition-colors">
                 <Mail className="w-5 h-5" />
                 info@cmig.co.za
               </a>
-              <a href="tel:0622126521" className="flex items-center justify-center gap-2 text-[#1A4D2E] hover:text-[#2E8B57]">
+              <a href="tel:0622126521" className="flex items-center justify-center gap-2 text-secondary hover:text-primary transition-colors">
                 <Phone className="w-5 h-5" />
                 062 212 6521
               </a>
