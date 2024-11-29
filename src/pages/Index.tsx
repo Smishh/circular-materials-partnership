@@ -31,9 +31,6 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-white to-[#E8EDF2] px-4">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/lovable-uploads/3d258ab7-eefd-4ba2-8932-bff60a5cd813.png')] bg-cover bg-center opacity-10" />
-        </div>
         <div className="container mx-auto text-center z-10">
           <div ref={addToRefs} className="reveal">
             <img src="/lovable-uploads/66119aab-eb70-440d-bc5f-bcdb89a46a63.png" alt="CMIG Logo" className="w-32 h-32 mx-auto mb-6" />
