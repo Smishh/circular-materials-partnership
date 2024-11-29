@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Building2, Users, Globe, ChartBar } from "lucide-react";
+import { Building2, Recycle, LineChart, Car, Users, Mail, Phone } from "lucide-react";
 
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
@@ -30,23 +30,21 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-white to-secondary px-4">
+      <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-white to-[#F5F9FF] px-4">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1433086966358-54859d0ed716')] bg-cover bg-center opacity-10" />
+          <div className="absolute inset-0 bg-[url('/lovable-uploads/394658f0-7248-4433-bb09-9af484b2a59c.png')] bg-cover bg-center opacity-10" />
         </div>
         <div className="container mx-auto text-center z-10">
           <div ref={addToRefs} className="reveal">
-            <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">
-              Welcome to CMIG
-            </span>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-              Circular Materials and Infrastructure Group
+            <img src="/lovable-uploads/394658f0-7248-4433-bb09-9af484b2a59c.png" alt="CMIG Logo" className="w-32 h-32 mx-auto mb-6" />
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-[#1A1F2C]">
+              Circular Materials and<br />Infrastructure Group
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Engineering sustainable solutions for tomorrow's infrastructure
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              Engineering sustainable solutions for tomorrow's infrastructure. We offer comprehensive services in design, maintenance, materials, and processes for manufacturing, construction, and the built environment.
             </p>
-            <button className="bg-primary text-white px-8 py-3 rounded-lg hover-lift">
-              Learn More
+            <button className="bg-[#0EA5E9] text-white px-8 py-3 rounded-lg hover:bg-[#0284C7] transition-colors">
+              Contact Us
             </button>
           </div>
         </div>
@@ -56,44 +54,51 @@ const Index = () => {
       <section className="py-24 bg-white px-4">
         <div className="container mx-auto">
           <div ref={addToRefs} className="reveal text-center mb-16">
-            <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">
-              Our Services
-            </span>
-            <h2 className="text-4xl font-bold mb-4">What We Do</h2>
+            <h2 className="text-4xl font-bold mb-4">Our Services</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We provide comprehensive consulting services in civil engineering and ESG implementation
+              Comprehensive solutions for sustainable infrastructure and materials engineering
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
+                icon: <Recycle className="w-8 h-8" />,
+                title: "Sustainability Engineering",
+                description: "Life Cycle Assessment, Carbon Footprinting, and Carbon Tax Consulting",
+              },
+              {
                 icon: <Building2 className="w-8 h-8" />,
-                title: "Infrastructure Design",
-                description: "Sustainable and innovative infrastructure solutions",
+                title: "Infrastructure Engineering",
+                description: "Structural Engineering, Condition Assessments, and Asset Management",
               },
               {
-                icon: <Users className="w-8 h-8" />,
-                title: "ESG Consulting",
-                description: "Environmental, Social, and Governance strategies",
+                icon: <LineChart className="w-8 h-8" />,
+                title: "Process Engineering",
+                description: "Industrial Waste Utilization and Construction Materials Advisory",
               },
               {
-                icon: <Globe className="w-8 h-8" />,
-                title: "Sustainability",
-                description: "Circular economy implementation in construction",
+                icon: <Car className="w-8 h-8" />,
+                title: "Transportation Engineering",
+                description: "Transport Impact Assessment, Master Planning, and Road Safety Audits",
               },
               {
-                icon: <ChartBar className="w-8 h-8" />,
-                title: "Performance Analysis",
-                description: "Data-driven infrastructure optimization",
+                icon: <Building2 className="w-8 h-8" />,
+                title: "Building Information Modelling",
+                description: "Residential and Municipal Infrastructure Design",
+              },
+              {
+                icon: <Building2 className="w-8 h-8" />,
+                title: "Structural Solutions",
+                description: "Structural Strengthening, Repair, and Corrosion Protection",
               },
             ].map((service, index) => (
               <div
                 key={index}
                 ref={addToRefs}
-                className="reveal p-6 rounded-xl bg-secondary hover-lift"
+                className="reveal p-6 rounded-xl bg-[#F8FAFC] hover:bg-[#F0F9FF] transition-colors hover-lift"
               >
-                <div className="mb-4 text-primary">{service.icon}</div>
+                <div className="mb-4 text-[#0EA5E9]">{service.icon}</div>
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                 <p className="text-muted-foreground">{service.description}</p>
               </div>
@@ -102,33 +107,47 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-24 bg-secondary px-4">
+      {/* Team Section */}
+      <section className="py-24 bg-[#F8FAFC] px-4">
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div ref={addToRefs} className="reveal">
-              <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">
-                About Us
-              </span>
-              <h2 className="text-4xl font-bold mb-6">
-                Engineering a Sustainable Future
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                At CMIG, we believe in creating infrastructure that serves both people and planet. Our team of experts combines civil engineering excellence with sustainable practices to deliver future-proof solutions.
-              </p>
-              <button className="bg-primary text-white px-6 py-3 rounded-lg hover-lift">
-                Our Story
-              </button>
-            </div>
-            <div ref={addToRefs} className="reveal">
-              <div className="relative rounded-xl overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1518107649057-3a0655e768f8"
-                  alt="Sustainable Infrastructure"
-                  className="w-full h-[400px] object-cover"
-                />
+          <div ref={addToRefs} className="reveal text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Our Team</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Over 20 years of combined experience in materials research, infrastructure management, and sustainable engineering
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Mandla Dlamini",
+                role: "Civil/Structural Engineer",
+                description: "Specializes in structural materials, infrastructure asset management, design and building information modelling.",
+              },
+              {
+                name: "Zonke Dumani",
+                role: "Process Engineer",
+                description: "Expert in sustainable construction materials, life cycle assessment studies, and carbon reduction initiatives.",
+              },
+              {
+                name: "Nothando Khumalo",
+                role: "Transport Engineer",
+                description: "Extensive experience in transportation planning and project management across consulting and construction.",
+              },
+            ].map((member, index) => (
+              <div
+                key={index}
+                ref={addToRefs}
+                className="reveal p-6 rounded-xl bg-white hover-lift"
+              >
+                <div className="mb-4">
+                  <Users className="w-12 h-12 text-[#0EA5E9]" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
+                <p className="text-[#0EA5E9] mb-2">{member.role}</p>
+                <p className="text-muted-foreground">{member.description}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -137,16 +156,20 @@ const Index = () => {
       <section className="py-24 bg-white px-4">
         <div className="container mx-auto text-center">
           <div ref={addToRefs} className="reveal">
-            <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">
-              Get in Touch
-            </span>
-            <h2 className="text-4xl font-bold mb-6">Start Your Project</h2>
+            <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              Ready to transform your infrastructure with sustainable solutions? Contact us to discuss your project.
+              Ready to transform your infrastructure with sustainable solutions? Get in touch with our team.
             </p>
-            <button className="bg-primary text-white px-8 py-3 rounded-lg hover-lift">
-              Contact Us
-            </button>
+            <div className="flex flex-col md:flex-row justify-center gap-8 max-w-2xl mx-auto">
+              <a href="mailto:info@cmig.co.za" className="flex items-center justify-center gap-2 text-[#0EA5E9] hover:text-[#0284C7]">
+                <Mail className="w-5 h-5" />
+                info@cmig.co.za
+              </a>
+              <a href="tel:0622126521" className="flex items-center justify-center gap-2 text-[#0EA5E9] hover:text-[#0284C7]">
+                <Phone className="w-5 h-5" />
+                062 212 6521
+              </a>
+            </div>
           </div>
         </div>
       </section>
