@@ -37,7 +37,7 @@ const Index = () => {
         <div className="container mx-auto text-center z-10">
           <div ref={addToRefs} className="reveal">
             <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full mb-4">
-              Welcome to Cmi G
+              Welcome to CMIG
             </span>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
               Circular Materials in Infrastructure
@@ -114,7 +114,7 @@ const Index = () => {
                 Engineering a Sustainable Future
               </h2>
               <p className="text-muted-foreground mb-6">
-                At Cmi G, we believe in creating infrastructure that serves both people and planet. Our team of experts combines civil engineering excellence with sustainable practices to deliver future-proof solutions.
+                At CMIG, we believe in creating infrastructure that serves both people and planet. Our team of experts combines civil engineering excellence with sustainable practices to deliver future-proof solutions.
               </p>
               <button className="bg-primary text-white px-6 py-3 rounded-lg hover-lift">
                 Our Story
