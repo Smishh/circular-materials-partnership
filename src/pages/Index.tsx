@@ -86,7 +86,7 @@ const Index = () => {
               },
               {
                 icon: <Building2 className="w-8 h-8" />,
-                title: "Structural Engineering and Structural Materials Consulting",
+                title: "Structural Solutions",
                 description: "Structural Strengthening, Repair, and Corrosion Protection",
               },
             ].map((service, index) => (
