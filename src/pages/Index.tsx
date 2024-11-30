@@ -67,7 +67,7 @@ const Index = () => {
               {
                 icon: <Building2 className="w-8 h-8" />,
                 title: "Infrastructure Engineering",
-                description: "Structural Engineering, Condition Assessments, and Asset Management",
+                description: "Civil Engineering, Condition Assessments, and Asset Management",
               },
               {
                 icon: <LineChart className="w-8 h-8" />,
