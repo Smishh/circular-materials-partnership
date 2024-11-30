@@ -117,9 +117,9 @@ const Index = () => {
                 <Mail className="w-5 h-5" />
                 info@cmig.co.za
               </a>
-              <a href="tel:0622126521" className="flex items-center justify-center gap-2 text-secondary hover:text-primary transition-colors">
+              <a href="tel:+27622126521" className="flex items-center justify-center gap-2 text-secondary hover:text-primary transition-colors">
                 <Phone className="w-5 h-5" />
-                062 212 6521
+                +27 62 212 6521
               </a>
             </div>
           </div>
