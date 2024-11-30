@@ -60,6 +60,11 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
+                icon: <Building2 className="w-8 h-8" />,
+                title: "Structural Design",
+                description: "Innovative structural solutions for buildings and infrastructure",
+              },
+              {
                 icon: <Recycle className="w-8 h-8" />,
                 title: "Sustainability Engineering",
                 description: "Life Cycle Assessment, Carbon Footprinting, and Carbon Tax Consulting",
