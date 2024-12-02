@@ -1,29 +1,29 @@
-import { ShoppingCart } from "lucide-react";
+import { Building2 } from "lucide-react";
 
-const Store = () => {
+const Projects = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-[#E8EDF2] px-4 py-16">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-primary">
-            Advanced EcoMaterials Store
+            Our Projects
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Sustainable and innovative materials for your construction and infrastructure projects.
+            Transforming infrastructure through sustainable innovation.
           </p>
         </div>
         
         <div className="flex flex-col items-center justify-center space-y-6 py-12">
-          <ShoppingCart className="w-16 h-16 text-secondary" />
+          <Building2 className="w-16 h-16 text-secondary" />
           <div className="text-center max-w-2xl mx-auto space-y-4">
             <p className="text-xl font-semibold text-primary">
-              Your Sustainable Materials Hub - Coming Soon
+              Project Showcase Coming Soon
             </p>
             <p className="text-muted-foreground">
-              We are meticulously preparing our online marketplace for advanced eco-friendly construction materials. Our store will feature a carefully selected range of sustainable products, complete with detailed specifications, environmental impact assessments, and application guidelines.
+              We are preparing a comprehensive showcase of our groundbreaking infrastructure projects. Each project will be presented with detailed insights into our sustainable approaches, innovative solutions, and measurable impacts on communities and the environment.
             </p>
             <p className="text-sm text-secondary">
-              Stay tuned for the launch of our comprehensive eco-materials catalog.
+              Return soon to explore our portfolio of sustainable infrastructure solutions.
             </p>
           </div>
         </div>
@@ -32,4 +32,4 @@ const Store = () => {
   );
 };
 
-export default Store;
+export default Projects;
