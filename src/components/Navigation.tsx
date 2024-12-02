@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, Grid, Building2, Mail } from "lucide-react";
+import { Menu, Grid, Building2, Mail, ShoppingCart } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -47,6 +47,12 @@ const Navigation = () => {
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
+                  <Link to="/store" className="flex items-center px-4 py-2 text-sm text-primary hover:bg-muted rounded-md">
+                    <ShoppingCart className="mr-2 h-4 w-4" />
+                    Advanced EcoMaterials Store
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
                   <Link to="/contact" className="flex items-center px-4 py-2 text-sm text-primary hover:bg-muted rounded-md">
                     <Mail className="mr-2 h-4 w-4" />
                     Contact Us
@@ -75,6 +81,14 @@ const Navigation = () => {
             >
               <Building2 className="mr-2 h-4 w-4" />
               Our Projects
+            </Link>
+            <Link
+              to="/store"
+              className="flex items-center px-4 py-2 text-sm text-primary hover:bg-muted rounded-md"
+              onClick={() => setIsOpen(false)}
+            >
+              <ShoppingCart className="mr-2 h-4 w-4" />
+              Advanced EcoMaterials Store
             </Link>
             <Link
               to="/contact"
