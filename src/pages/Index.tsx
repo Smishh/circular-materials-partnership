@@ -93,7 +93,7 @@ const Index = () => {
                 className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
               >
                 <div className="mb-4 text-secondary"><Building2 className="w-8 h-8" /></div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">Building Information Modelling</h3>
+                <h3 className="text-xl font-semibold mb-2 text-primary">Buildings and Residential Design</h3>
                 <p className="text-muted-foreground">Residential and Municipal Infrastructure Design</p>
               </div>
             </div>
