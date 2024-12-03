@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Projects from "./pages/Projects";
 import Store from "./pages/Store";
+import Knowledge from "./pages/Knowledge";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/store" element={<Store />} />
+          <Route path="/knowledge" element={<Knowledge />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
