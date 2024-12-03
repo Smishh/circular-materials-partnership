@@ -49,7 +49,7 @@ const Navigation = () => {
                 <NavigationMenuItem>
                   <Link to="/store" className="flex items-center px-4 py-2 text-sm text-primary hover:bg-muted rounded-md">
                     <ShoppingCart className="mr-2 h-4 w-4" />
-                    Advanced EcoMaterials Store
+                    EcoMaterials Store
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
