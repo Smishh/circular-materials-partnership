@@ -57,54 +57,70 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Building2 className="w-8 h-8" />,
-                title: "Structural Design",
-                description: "Innovative structural solutions for buildings and infrastructure",
-              },
-              {
-                icon: <Recycle className="w-8 h-8" />,
-                title: "Sustainability Engineering",
-                description: "Life Cycle Assessment, Carbon Footprinting, and Carbon Tax Consulting",
-              },
-              {
-                icon: <Building2 className="w-8 h-8" />,
-                title: "Infrastructure Engineering",
-                description: "Civil Engineering, Condition Assessments, and Asset Management",
-              },
-              {
-                icon: <LineChart className="w-8 h-8" />,
-                title: "Process Engineering",
-                description: "Industrial Waste Utilization and Construction Materials Advisory",
-              },
-              {
-                icon: <Car className="w-8 h-8" />,
-                title: "Transportation Engineering",
-                description: "Transport Impact Assessment, Master Planning, and Road Safety Audits",
-              },
-              {
-                icon: <Building2 className="w-8 h-8" />,
-                title: "Building Information Modelling",
-                description: "Residential and Municipal Infrastructure Design",
-              },
-              {
-                icon: <Building2 className="w-8 h-8" />,
-                title: "Structural Engineering",
-                description: "Structural Strengthening, Repair, and Corrosion Protection",
-              },
-            ].map((service, index) => (
+          {/* Civil and Structural Engineering Section */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Civil and Structural Engineering</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               <div
-                key={index}
                 ref={addToRefs}
                 className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
               >
-                <div className="mb-4 text-secondary">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
+                <div className="mb-4 text-secondary"><Building2 className="w-8 h-8" /></div>
+                <h3 className="text-xl font-semibold mb-2 text-primary">Structural Design</h3>
+                <p className="text-muted-foreground">Innovative structural solutions for buildings and infrastructure</p>
               </div>
-            ))}
+
+              <div
+                ref={addToRefs}
+                className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
+              >
+                <div className="mb-4 text-secondary"><Building2 className="w-8 h-8" /></div>
+                <h3 className="text-xl font-semibold mb-2 text-primary">Infrastructure Asset Management</h3>
+                <p className="text-muted-foreground">Civil Engineering, Condition Assessments, and Asset Management</p>
+              </div>
+
+              <div
+                ref={addToRefs}
+                className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
+              >
+                <div className="mb-4 text-secondary"><Car className="w-8 h-8" /></div>
+                <h3 className="text-xl font-semibold mb-2 text-primary">Transportation Engineering</h3>
+                <p className="text-muted-foreground">Transport Impact Assessment, Master Planning, and Road Safety Audits</p>
+              </div>
+
+              <div
+                ref={addToRefs}
+                className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
+              >
+                <div className="mb-4 text-secondary"><Building2 className="w-8 h-8" /></div>
+                <h3 className="text-xl font-semibold mb-2 text-primary">Building Information Modelling</h3>
+                <p className="text-muted-foreground">Residential and Municipal Infrastructure Design</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Sustainability and Process Engineering Section */}
+          <div>
+            <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Sustainability and Process Engineering</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+              <div
+                ref={addToRefs}
+                className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
+              >
+                <div className="mb-4 text-secondary"><Recycle className="w-8 h-8" /></div>
+                <h3 className="text-xl font-semibold mb-2 text-primary">Sustainability Engineering</h3>
+                <p className="text-muted-foreground">Life Cycle Assessment, Carbon Footprinting, and Carbon Tax Consulting</p>
+              </div>
+
+              <div
+                ref={addToRefs}
+                className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
+              >
+                <div className="mb-4 text-secondary"><LineChart className="w-8 h-8" /></div>
+                <h3 className="text-xl font-semibold mb-2 text-primary">Process Engineering</h3>
+                <p className="text-muted-foreground">Industrial Waste Utilization and Construction Materials Advisory</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
