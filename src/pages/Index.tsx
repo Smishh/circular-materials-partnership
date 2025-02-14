@@ -1,34 +1,26 @@
 import { useEffect, useRef } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone } from "lucide-react";
-
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    revealRefs.current.forEach((ref) => observer.observe(ref));
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    revealRefs.current.forEach(ref => observer.observe(ref));
     return () => observer.disconnect();
   }, []);
-
   const addToRefs = (el: HTMLDivElement) => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
     }
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-white to-[#E8EDF2] px-4">
         <div className="container mx-auto text-center z-10">
@@ -61,37 +53,25 @@ const Index = () => {
           <div className="mb-16">
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Civil and Structural Engineering</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              <div
-                ref={addToRefs}
-                className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
-              >
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift">
                 <div className="mb-4 text-secondary"><Building2 className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Structural Design</h3>
                 <p className="text-muted-foreground">Innovative structural solutions for buildings and infrastructure</p>
               </div>
 
-              <div
-                ref={addToRefs}
-                className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
-              >
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift">
                 <div className="mb-4 text-secondary"><Building2 className="w-8 h-8" /></div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">Infrastructure Asset Management</h3>
+                <h3 className="text-xl font-semibold mb-2 text-primary">Structural Integrity, Durability and Maintenance of Structures</h3>
                 <p className="text-muted-foreground">Civil Engineering, Condition Assessments, and Asset Management</p>
               </div>
 
-              <div
-                ref={addToRefs}
-                className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
-              >
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift">
                 <div className="mb-4 text-secondary"><Car className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Transportation Engineering</h3>
                 <p className="text-muted-foreground">Transport Impact Assessment, Master Planning, and Road Safety Audits</p>
               </div>
 
-              <div
-                ref={addToRefs}
-                className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
-              >
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift">
                 <div className="mb-4 text-secondary"><Building2 className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Buildings and Residential Design</h3>
                 <p className="text-muted-foreground">Residential and Municipal Infrastructure Design</p>
@@ -103,19 +83,13 @@ const Index = () => {
           <div>
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Sustainability and Process Engineering</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              <div
-                ref={addToRefs}
-                className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
-              >
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift">
                 <div className="mb-4 text-secondary"><Recycle className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Sustainability Engineering</h3>
                 <p className="text-muted-foreground">Life Cycle Assessment, Carbon Footprinting, and Carbon Tax Consulting</p>
               </div>
 
-              <div
-                ref={addToRefs}
-                className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift"
-              >
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift">
                 <div className="mb-4 text-secondary"><LineChart className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Process Engineering</h3>
                 <p className="text-muted-foreground">Industrial Waste Utilization and Construction Materials Advisory</p>
@@ -146,8 +120,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
