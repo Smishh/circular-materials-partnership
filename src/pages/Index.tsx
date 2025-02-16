@@ -33,13 +33,15 @@ const Index = () => {
               <img src="/lovable-uploads/8a8c6a80-5bd8-48bf-aa22-01e80ef02631.png" alt="CMIG Logo" className="w-32 h-32" />
             </div>
             
-            {/* Added text shadow and adjusted colors for better readability */}
             <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white drop-shadow-lg">
               Circular Materials and<br />Infrastructure Group
             </h1>
-            <p className="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto mb-8 drop-shadow">
-              Engineering sustainable solutions for tomorrow's infrastructure. We offer comprehensive services in design, maintenance, materials, and processes for manufacturing, construction, and the built environment.
-            </p>
+            {/* Added semi-transparent background and adjusted text color for better readability */}
+            <div className="bg-primary/20 backdrop-blur-sm p-6 rounded-lg inline-block max-w-3xl mx-auto mb-8">
+              <p className="text-lg md:text-xl text-primary-foreground font-medium">
+                Engineering sustainable solutions for tomorrow's infrastructure. We offer comprehensive services in design, maintenance, materials, and processes for manufacturing, construction, and the built environment.
+              </p>
+            </div>
             <button className="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary transition-colors shadow-lg">
               Contact Us
             </button>
