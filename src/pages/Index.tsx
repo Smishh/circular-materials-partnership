@@ -30,7 +30,7 @@ const Index = () => {
           <div ref={addToRefs} className="reveal">
             {/* Added a subtle white background to the logo for better contrast */}
             <div className="inline-block p-4 rounded-full bg-white/10 backdrop-blur-sm mb-6">
-              <img src="/lovable-uploads/66119aab-eb70-440d-bc5f-bcdb89a46a63.png" alt="CMIG Logo" className="w-32 h-32" />
+              <img src="/lovable-uploads/8a8c6a80-5bd8-48bf-aa22-01e80ef02631.png" alt="CMIG Logo" className="w-32 h-32" />
             </div>
             
             {/* Added text shadow and adjusted colors for better readability */}
