@@ -23,17 +23,24 @@ const Index = () => {
   return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url("/lovable-uploads/12b8048d-295a-4ba8-b101-a4fed50412d0.png")' }}>
-        <div className="absolute inset-0 bg-black/50"></div>
+        {/* Gradient overlay for better readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+        
         <div className="container mx-auto text-center z-10">
           <div ref={addToRefs} className="reveal">
-            <img src="/lovable-uploads/66119aab-eb70-440d-bc5f-bcdb89a46a63.png" alt="CMIG Logo" className="w-32 h-32 mx-auto mb-6" />
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
+            {/* Added a subtle white background to the logo for better contrast */}
+            <div className="inline-block p-4 rounded-full bg-white/10 backdrop-blur-sm mb-6">
+              <img src="/lovable-uploads/66119aab-eb70-440d-bc5f-bcdb89a46a63.png" alt="CMIG Logo" className="w-32 h-32" />
+            </div>
+            
+            {/* Added text shadow and adjusted colors for better readability */}
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white drop-shadow-lg">
               Circular Materials and<br />Infrastructure Group
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto mb-8 drop-shadow">
               Engineering sustainable solutions for tomorrow's infrastructure. We offer comprehensive services in design, maintenance, materials, and processes for manufacturing, construction, and the built environment.
             </p>
-            <button className="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary transition-colors">
+            <button className="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary transition-colors shadow-lg">
               Contact Us
             </button>
           </div>
