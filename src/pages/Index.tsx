@@ -38,7 +38,7 @@ const Index = () => {
             </h1>
             {/* White strip with black text */}
             <div className="w-full bg-white py-4">
-              <p className="text-lg md:text-xl text-black font-medium max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-black font-medium max-w-3xl mx-auto">
                 Engineering sustainable solutions for tomorrow's infrastructure. We offer comprehensive services in design, maintenance, materials, and processes for manufacturing, construction, and the built environment.
               </p>
             </div>
