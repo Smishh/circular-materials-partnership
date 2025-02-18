@@ -29,7 +29,7 @@ const Index = () => {
         <div className="container mx-auto text-center z-10">
           <div ref={addToRefs} className="reveal">
             {/* Added a whiter background to the logo for better contrast */}
-            <div className="inline-block p-4 rounded-xl bg-white/80 backdrop-blur-sm mb-6">
+            <div className="inline-block p-4 rounded-2xl bg-white/80 backdrop-blur-sm mb-6">
               <img src="/lovable-uploads/8a8c6a80-5bd8-48bf-aa22-01e80ef02631.png" alt="CMIG Logo" className="w-32 h-32" />
             </div>
             
@@ -37,7 +37,7 @@ const Index = () => {
               Circular Materials and<br />Infrastructure Group
             </h1>
             {/* White strip with black text */}
-            <div className="w-full bg-white py-4 rounded-sm">
+            <div className="w-full bg-white py-4 rounded-md">
               <p className="text-base md:text-lg text-black font-medium max-w-3xl mx-auto">
                 Engineering sustainable solutions for tomorrow's infrastructure. We offer comprehensive services in design, maintenance, materials, and processes for manufacturing, construction, and the built environment.
               </p>
