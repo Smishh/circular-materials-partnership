@@ -36,13 +36,13 @@ const Index = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white drop-shadow-lg">
               Circular Materials and<br />Infrastructure Group
             </h1>
-            {/* Enhanced blur and transparency for better background blend */}
-            <div className="block bg-white/60 backdrop-blur-md p-6 rounded-lg max-w-3xl mx-auto mb-8">
-              <p className="text-lg md:text-xl text-primary font-medium">
+            {/* White strip with black text */}
+            <div className="w-full bg-white py-4">
+              <p className="text-lg md:text-xl text-black font-medium max-w-2xl mx-auto">
                 Engineering sustainable solutions for tomorrow's infrastructure. We offer comprehensive services in design, maintenance, materials, and processes for manufacturing, construction, and the built environment.
               </p>
             </div>
-            <button className="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary transition-colors shadow-lg">
+            <button className="mt-8 bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary transition-colors shadow-lg">
               Contact Us
             </button>
           </div>
