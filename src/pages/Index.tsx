@@ -40,7 +40,8 @@ const Index = () => {
             </h1>
             {/* White strip with black text */}
             <div className="w-full bg-white py-4 rounded-md">
-              <p className="text-base md:text-lg text-black font-medium max-w-3xl mx-auto">Hi, thank you for visiting our website. At CMIG we offer services clients and people  seeking to get civil and structural engineering services, process engineering, construction materials and sustainable technology solutions for tomorrow's infrastructure. We offer comprehensive services in design, maintenance, materials, and processes for manufacturing, construction, and the built environment.</p>
+              <p className="text-base md:text-lg text-black font-medium max-w-3xl mx-auto">Dear vistor thank you for visiting our website. The site is updated frequently as our services expand, we are 
+At CMIG we offer services clients and people  seeking to get civil and structural engineering services, process engineering, construction materials and sustainable technology solutions for tomorrow's infrastructure. We offer comprehensive services in design, maintenance, materials, and processes for manufacturing, construction, and the built environment.</p>
             </div>
             <button className="mt-8 bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary transition-colors shadow-lg">
               Contact Us
