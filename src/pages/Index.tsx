@@ -61,24 +61,6 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Project Management Section */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Project Management</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift">
-                <div className="mb-4 text-secondary"><List className="w-8 h-8" /></div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">Project Planning & Control</h3>
-                <p className="text-muted-foreground">Strategic project planning, scheduling, and monitoring for optimal delivery</p>
-              </div>
-
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift">
-                <div className="mb-4 text-secondary"><Briefcase className="w-8 h-8" /></div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">Construction Management</h3>
-                <p className="text-muted-foreground">Comprehensive construction supervision and contract administration</p>
-              </div>
-            </div>
-          </div>
-
           {/* Civil and Structural Engineering Section */}
           <div className="mb-16">
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Civil and Structural Engineering</h3>
@@ -105,6 +87,24 @@ const Index = () => {
                 <div className="mb-4 text-secondary"><Building2 className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Buildings and Residential Design</h3>
                 <p className="text-muted-foreground">Residential and Municipal Infrastructure Design</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Project Management Section */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Project Management</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift">
+                <div className="mb-4 text-secondary"><List className="w-8 h-8" /></div>
+                <h3 className="text-xl font-semibold mb-2 text-primary">Project Planning & Control</h3>
+                <p className="text-muted-foreground">Strategic project planning, scheduling, and monitoring for optimal delivery</p>
+              </div>
+
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-accent hover:bg-accent/80 transition-colors hover-lift">
+                <div className="mb-4 text-secondary"><Briefcase className="w-8 h-8" /></div>
+                <h3 className="text-xl font-semibold mb-2 text-primary">Construction Management</h3>
+                <p className="text-muted-foreground">Comprehensive construction supervision and contract administration</p>
               </div>
             </div>
           </div>
