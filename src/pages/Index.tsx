@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 
@@ -58,7 +59,7 @@ const Index = () => {
               }`}
               style={{
                 backgroundImage: `url("${image}")`,
-                backgroundSize: 'cover',
+                backgroundSize: 'contain',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 zIndex: index === currentImageIndex ? 1 : 0
