@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 
@@ -27,7 +26,6 @@ const Index = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Only trigger image change when scrolling more than 50px
       if (Math.abs(currentScrollY - lastScrollY.current) > 50) {
         setCurrentImageIndex(prev => (prev === 0 ? 1 : 0));
         lastScrollY.current = currentScrollY;
@@ -55,11 +53,14 @@ const Index = () => {
           {backgroundImages.map((image, index) => (
             <div
               key={image}
-              className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out bg-cover bg-center bg-no-repeat ${
+              className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out ${
                 index === currentImageIndex ? 'translate-x-0' : 'translate-x-full'
               }`}
               style={{
                 backgroundImage: `url("${image}")`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
                 zIndex: index === currentImageIndex ? 1 : 0
               }}
             />
