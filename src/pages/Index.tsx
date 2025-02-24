@@ -1,9 +1,17 @@
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const lastScrollY = useRef(0);
+  
+  const backgroundImages = [
+    '/lovable-uploads/12b8048d-295a-4ba8-b101-a4fed50412d0.png',
+    '/lovable-uploads/adcaf296-1897-4def-858c-28106bd1a920.png'
+  ];
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -15,20 +23,50 @@ const Index = () => {
       threshold: 0.1
     });
     revealRefs.current.forEach(ref => observer.observe(ref));
-    return () => observer.disconnect();
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Only trigger image change when scrolling more than 50px
+      if (Math.abs(currentScrollY - lastScrollY.current) > 50) {
+        setCurrentImageIndex(prev => (prev === 0 ? 1 : 0));
+        lastScrollY.current = currentScrollY;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
+
   const addToRefs = (el: HTMLDivElement) => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
     }
   };
+
   return <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: 'url("/lovable-uploads/12b8048d-295a-4ba8-b101-a4fed50412d0.png")'
-    }}>
-        {/* Gradient overlay for better readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Background images container */}
+        <div className="absolute inset-0 w-full h-full">
+          {backgroundImages.map((image, index) => (
+            <div
+              key={image}
+              className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out bg-cover bg-center bg-no-repeat ${
+                index === currentImageIndex ? 'translate-x-0' : 'translate-x-full'
+              }`}
+              style={{
+                backgroundImage: `url("${image}")`,
+                zIndex: index === currentImageIndex ? 1 : 0
+              }}
+            />
+          ))}
+          {/* Gradient overlay for better readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-[2]"></div>
+        </div>
         
         <div className="container mx-auto text-center z-10">
           <div ref={addToRefs} className="reveal">
@@ -162,4 +200,5 @@ const Index = () => {
       </section>
     </div>;
 };
+
 export default Index;
