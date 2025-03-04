@@ -41,25 +41,33 @@ html {
 
 /* Article styling */
 .prose h1 {
-  @apply text-3xl font-bold mb-4;
+  @apply text-3xl font-bold mb-4 text-primary;
 }
 
 .prose h2 {
-  @apply text-2xl font-semibold mt-8 mb-4;
+  @apply text-2xl font-semibold mt-8 mb-4 text-primary;
 }
 
 .prose h3 {
-  @apply text-xl font-medium mt-6 mb-3;
+  @apply text-xl font-medium mt-6 mb-3 text-primary;
 }
 
 .prose p {
-  @apply mb-4 leading-relaxed;
+  @apply mb-4 leading-relaxed text-foreground;
 }
 
 .prose ul {
-  @apply list-disc pl-6 mb-4 space-y-1;
+  @apply list-disc pl-6 mb-4 space-y-1 text-foreground;
 }
 
 .prose blockquote {
-  @apply pl-4 border-l-4 italic my-4;
+  @apply pl-4 border-l-4 italic my-4 text-foreground;
+}
+
+.prose strong {
+  @apply font-semibold text-primary;
+}
+
+.prose a {
+  @apply text-secondary hover:text-secondary/80 underline;
 }
