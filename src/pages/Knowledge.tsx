@@ -1,31 +1,22 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
-
 type Article = {
   id: string;
   title: string;
   subtitle: string;
   content: React.ReactNode;
 };
-
-const articles: Article[] = [
-  {
-    id: "self-builders",
-    title: "Empowering Self-Builders with Affordable Structural Engineering",
-    subtitle: "Building safe, durable homes that last generations",
-    content: (
-      <>
+const articles: Article[] = [{
+  id: "self-builders",
+  title: "Empowering Self-Builders with Affordable Structural Engineering",
+  subtitle: "Building safe, durable homes that last generations",
+  content: <>
         <section>
           <div className="mb-8">
-            <img 
-              src="/lovable-uploads/798d2ce3-e364-47a1-9ed5-c7f7f538ea2f.png" 
-              alt="A self-built house with clay walls and tiled roof" 
-              className="w-full h-auto rounded-lg shadow-md" 
-            />
+            <img src="/lovable-uploads/798d2ce3-e364-47a1-9ed5-c7f7f538ea2f.png" alt="A self-built house with clay walls and tiled roof" className="w-full h-auto rounded-lg shadow-md" />
           </div>
 
           <h2 className="text-2xl font-semibold text-primary mt-8 mb-4">The Challenge for Self-Builders</h2>
@@ -60,11 +51,7 @@ const articles: Article[] = [
           </ul>
           
           <div className="my-8">
-            <img 
-              src="/lovable-uploads/7d191279-c6af-47a9-ba3b-626fb8ceca5b.png" 
-              alt="A construction worker measuring a window frame on a self-built house" 
-              className="w-full h-auto rounded-lg shadow-md" 
-            />
+            <img src="/lovable-uploads/7d191279-c6af-47a9-ba3b-626fb8ceca5b.png" alt="A construction worker measuring a window frame on a self-built house" className="w-full h-auto rounded-lg shadow-md" />
           </div>
           
           <h3 className="text-xl font-medium text-primary mt-6 mb-3">2. Practical Knowledge Transfer</h3>
@@ -182,46 +169,32 @@ const articles: Article[] = [
           </div>
         </section>
       </>
-    )
-  },
-  {
-    id: "future-article-1",
-    title: "Structural Solutions for Challenging Terrain",
-    subtitle: "Building safely on slopes, floodplains, and unstable soils",
-    content: <p>Article content coming soon...</p>
-  },
-  {
-    id: "future-article-2",
-    title: "Material Selection for Durability and Sustainability",
-    subtitle: "Making informed choices for long-lasting structures",
-    content: <p>Article content coming soon...</p>
-  }
-];
-
+}, {
+  id: "future-article-1",
+  title: "Structural Solutions for Challenging Terrain",
+  subtitle: "Building safely on slopes, floodplains, and unstable soils",
+  content: <p>Article content coming soon...</p>
+}, {
+  id: "future-article-2",
+  title: "Material Selection for Durability and Sustainability",
+  subtitle: "Making informed choices for long-lasting structures",
+  content: <p>Article content coming soon...</p>
+}];
 const Knowledge = () => {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
-
   const handleArticleClick = (article: Article) => {
     setSelectedArticle(article);
     window.scrollTo(0, 0);
   };
-
   const handleBackClick = () => {
     setSelectedArticle(null);
     window.scrollTo(0, 0);
   };
-
-  return (
-    <div className="container mx-auto px-4 py-8">
-      {selectedArticle ? (
-        <div className="w-full max-w-4xl mx-auto shadow-md rounded-lg bg-card">
+  return <div className="container mx-auto px-4 py-8">
+      {selectedArticle ? <div className="w-full max-w-4xl mx-auto shadow-md rounded-lg bg-card">
           <div className="p-8">
             <div className="mb-4">
-              <Button 
-                variant="ghost" 
-                className="text-primary hover:text-primary/80 pl-0" 
-                onClick={handleBackClick}
-              >
+              <Button variant="ghost" className="text-primary hover:text-primary/80 pl-0" onClick={handleBackClick}>
                 <ChevronLeft className="mr-2 h-4 w-4" />
                 Back to Articles
               </Button>
@@ -235,31 +208,20 @@ const Knowledge = () => {
               {selectedArticle.content}
             </article>
           </div>
-        </div>
-      ) : (
-        <>
+        </div> : <>
           <h1 className="text-3xl font-bold text-primary mb-8 text-center">Knowledge Centre</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {articles.map((article) => (
-              <Card 
-                key={article.id}
-                className="hover:shadow-md transition-shadow duration-300 hover-lift cursor-pointer"
-                onClick={() => handleArticleClick(article)}
-              >
+            {articles.map(article => <Card key={article.id} className="hover:shadow-md transition-shadow duration-300 hover-lift cursor-pointer" onClick={() => handleArticleClick(article)}>
                 <CardContent className="p-6">
-                  <h2 className="text-xl font-semibold text-primary mb-2">{article.title}</h2>
+                  <h2 className="text-xl font-semibold mb-2 text-green-900">{article.title}</h2>
                   <p className="text-muted-foreground text-sm">{article.subtitle}</p>
                   <div className="mt-4 text-sm text-right">
                     <span className="text-secondary font-medium">Read Article →</span>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
-        </>
-      )}
-    </div>
-  );
+        </>}
+    </div>;
 };
-
 export default Knowledge;
