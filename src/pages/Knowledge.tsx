@@ -214,8 +214,8 @@ const Knowledge = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       {selectedArticle ? (
-        <Card className="w-full max-w-4xl mx-auto shadow-md">
-          <CardContent className="p-8">
+        <div className="w-full max-w-4xl mx-auto shadow-md rounded-lg bg-card">
+          <div className="p-8">
             <div className="mb-4">
               <Button 
                 variant="ghost" 
@@ -234,8 +234,8 @@ const Knowledge = () => {
               
               {selectedArticle.content}
             </article>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       ) : (
         <>
           <h1 className="text-3xl font-bold text-primary mb-8 text-center">Knowledge Centre</h1>
