@@ -191,7 +191,7 @@ const Knowledge = () => {
     window.scrollTo(0, 0);
   };
   return <div className="container mx-auto px-4 py-8">
-      {selectedArticle ? <div className="w-full max-w-4xl mx-auto shadow-md rounded-lg bg-card">
+      {selectedArticle ? <div className="w-full max-w-5xl mx-auto shadow-md rounded-lg bg-card">
           <div className="p-8">
             <div className="mb-4">
               <Button variant="ghost" className="text-primary hover:text-primary/80 pl-0" onClick={handleBackClick}>
@@ -210,7 +210,7 @@ const Knowledge = () => {
           </div>
         </div> : <>
           <h1 className="text-3xl font-bold text-primary mb-8 text-center">Knowledge Centre</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {articles.map(article => <Card key={article.id} className="hover:shadow-md transition-shadow duration-300 hover-lift cursor-pointer" onClick={() => handleArticleClick(article)}>
                 <CardContent className="p-6">
                   <h2 className="text-xl font-semibold mb-2 text-green-900">{article.title}</h2>
