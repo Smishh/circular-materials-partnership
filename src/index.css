@@ -71,3 +71,7 @@ html {
 .prose a {
   @apply text-secondary hover:text-secondary/80 underline;
 }
+
+.prose img {
+  @apply rounded-lg my-6 max-w-full mx-auto;
+}

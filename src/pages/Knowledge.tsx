@@ -20,6 +20,14 @@ const articles: Article[] = [
     content: (
       <>
         <section>
+          <div className="mb-8">
+            <img 
+              src="/lovable-uploads/798d2ce3-e364-47a1-9ed5-c7f7f538ea2f.png" 
+              alt="A self-built house with clay walls and tiled roof" 
+              className="w-full h-auto rounded-lg shadow-md" 
+            />
+          </div>
+
           <h2 className="text-2xl font-semibold text-primary mt-8 mb-4">The Challenge for Self-Builders</h2>
           <p className="mb-4">
             Creating your own home is an admirable achievement, but it comes with significant challenges. 
@@ -50,6 +58,14 @@ const articles: Article[] = [
             <li>Accommodate phased construction as resources become available</li>
             <li>Meet rigorous safety standards without unnecessary costs</li>
           </ul>
+          
+          <div className="my-8">
+            <img 
+              src="/lovable-uploads/7d191279-c6af-47a9-ba3b-626fb8ceca5b.png" 
+              alt="A construction worker measuring a window frame on a self-built house" 
+              className="w-full h-auto rounded-lg shadow-md" 
+            />
+          </div>
           
           <h3 className="text-xl font-medium text-primary mt-6 mb-3">2. Practical Knowledge Transfer</h3>
           <p className="mb-2">We go beyond just providing plans - we empower you with the knowledge to build with confidence:</p>
@@ -117,7 +133,7 @@ const articles: Article[] = [
         <section>
           <h2 className="text-2xl font-semibold text-primary mt-8 mb-4">Success Stories</h2>
           
-          <div className="bg-accent p-4 rounded-md mb-4">
+          <div className="bg-accent p-4 rounded-md mb-4 shadow-sm">
             <h3 className="text-lg font-medium mb-2">House Mdluli</h3>
             <blockquote className="pl-4 border-l-4 border-secondary italic">
               Facing a steeply sloped site and seasonal flooding, the Mdluli family needed an affordable foundation 
@@ -127,7 +143,7 @@ const articles: Article[] = [
             </blockquote>
           </div>
           
-          <div className="bg-accent p-4 rounded-md mb-4">
+          <div className="bg-accent p-4 rounded-md mb-4 shadow-sm">
             <h3 className="text-lg font-medium mb-2">Yakhumuzi Hardware</h3>
             <blockquote className="pl-4 border-l-4 border-secondary italic">
               Working with this family owned business, CMIG provided standardized structural designs to enable 
@@ -158,7 +174,7 @@ const articles: Article[] = [
             durable, and tailored to your unique needs and aspirations.
           </p>
           
-          <div className="bg-muted p-6 rounded-lg">
+          <div className="bg-muted p-6 rounded-lg shadow-sm">
             <p className="mb-2"><strong>Email</strong>: info@cmig.com</p>
             <p className="mb-2"><strong>Phone</strong>: +27 64 036 0874</p>
             <p className="mb-2"><strong>Web</strong>: www.cmig.com</p>
@@ -198,7 +214,7 @@ const Knowledge = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       {selectedArticle ? (
-        <Card className="w-full max-w-4xl mx-auto">
+        <Card className="w-full max-w-4xl mx-auto shadow-md">
           <CardContent className="p-8">
             <div className="mb-4">
               <Button 
