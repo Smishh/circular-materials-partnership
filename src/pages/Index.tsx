@@ -1,17 +1,10 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
-
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const lastScrollY = useRef(0);
-  
-  const backgroundImages = [
-    '/lovable-uploads/12b8048d-295a-4ba8-b101-a4fed50412d0.png',
-    '/lovable-uploads/adcaf296-1897-4def-858c-28106bd1a920.png'
-  ];
-
+  const backgroundImages = ['/lovable-uploads/12b8048d-295a-4ba8-b101-a4fed50412d0.png', '/lovable-uploads/adcaf296-1897-4def-858c-28106bd1a920.png'];
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -23,49 +16,36 @@ const Index = () => {
       threshold: 0.1
     });
     revealRefs.current.forEach(ref => observer.observe(ref));
-    
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
       if (Math.abs(currentScrollY - lastScrollY.current) > 50) {
-        setCurrentImageIndex(prev => (prev === 0 ? 1 : 0));
+        setCurrentImageIndex(prev => prev === 0 ? 1 : 0);
         lastScrollY.current = currentScrollY;
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   const addToRefs = (el: HTMLDivElement) => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
     }
   };
-
   return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background images container */}
         <div className="absolute inset-0 w-full h-full">
-          {backgroundImages.map((image, index) => (
-            <div
-              key={image}
-              className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out ${
-                index === currentImageIndex ? 'translate-x-0' : 'translate-x-full'
-              }`}
-              style={{
-                backgroundImage: `url("${image}")`,
-                backgroundSize: 'contain',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                zIndex: index === currentImageIndex ? 1 : 0
-              }}
-            />
-          ))}
+          {backgroundImages.map((image, index) => <div key={image} className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out ${index === currentImageIndex ? 'translate-x-0' : 'translate-x-full'}`} style={{
+          backgroundImage: `url("${image}")`,
+          backgroundSize: 'contain',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          zIndex: index === currentImageIndex ? 1 : 0
+        }} />)}
           {/* Gradient overlay for better readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-[2]"></div>
         </div>
@@ -82,7 +62,7 @@ const Index = () => {
             </h1>
             {/* White strip with black text */}
             <div className="w-full bg-white py-4 rounded-md">
-              <p className="text-sm md:text-base text-primary font-medium max-w-3xl mx-auto">Dear vistor, thank you for visiting our website. The site is updated frequently as our services expand. Please have a look at our service offerings, our knowledge centre or materials eco store. We believe in people centred approach to engineering, sustainable construction materials and innovative technology solutions for tomorrow's infrastructure. We offer comprehensive services in design, maintenance, materials, and processes for manufacturing, construction, and the built environment.</p>
+              <p className="text-sm md:text-base text-primary font-medium max-w-3xl mx-auto">Welcome to Circular Materials and Infrastructure Group - a built environment engineering company specializing in civil structural engineering and process engineering. We are committed to shaping sustainable infrastructure through sustainable engineering, innovative technologies, and a people-centric approach. Our services include design, condition assessment, maintenance, asset management, eco-friendly materials, and optimized processes. Explore our Knowledge Center for industry insights and our Materials Eco Store for sustainable construction products. Partner with us to build resilient infrastructure while minimizing environmental impact.</p>
             </div>
             <button className="mt-8 bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary transition-colors shadow-lg">
               Contact Us
@@ -202,5 +182,4 @@ const Index = () => {
       </section>
     </div>;
 };
-
 export default Index;
