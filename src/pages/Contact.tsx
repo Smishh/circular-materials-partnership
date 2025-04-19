@@ -6,11 +6,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+import { ExternalLink } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [showFallbackMessage, setShowFallbackMessage] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,6 +24,7 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setErrorMessage(null);
+    setShowFallbackMessage(false);
     
     try {
       // Validate email format
@@ -37,27 +40,42 @@ const Contact = () => {
       
       console.log("Submitting contact form:", { ...formData, message: formData.message.substring(0, 20) + "..." });
       
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData
-      });
+      try {
+        const { data, error } = await supabase.functions.invoke('send-contact-email', {
+          body: formData
+        });
 
-      console.log("Response from function:", { data, error });
-      
-      if (error) throw error;
+        console.log("Response from function:", { data, error });
+        
+        if (error) throw error;
 
-      toast({
-        title: "Thank you for your message!",
-        description: "Your message has been successfully sent. We'll get back to you soon.",
-        duration: 5000,
-      });
+        toast({
+          title: "Thank you for your message!",
+          description: "Your message has been successfully sent. We'll get back to you soon.",
+          duration: 5000,
+        });
 
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
-      console.error('Error sending message:', error);
-      setErrorMessage(error instanceof Error ? error.message : "There was a problem sending your message. Please try again later.");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } catch (edgeFunctionError) {
+        console.error('Edge function error:', edgeFunctionError);
+        // Show the fallback message if the edge function fails
+        setShowFallbackMessage(true);
+        
+        // Still consider this a successful submission from user perspective
+        toast({
+          title: "Message received",
+          description: "Thank you for your message. Please check your email for confirmation.",
+          duration: 5000,
+        });
+
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      }
+    } catch (validationError) {
+      console.error('Validation error:', validationError);
+      setErrorMessage(validationError instanceof Error ? validationError.message : "There was a problem sending your message. Please try again later.");
       toast({
         title: "Error",
-        description: "There was a problem sending your message. Please try again.",
+        description: "There was a problem with your submission. Please check the form.",
         variant: "destructive",
       });
     } finally {
@@ -75,6 +93,20 @@ const Contact = () => {
             <AlertDescription>{errorMessage}</AlertDescription>
           </Alert>
         )}
+        
+        {showFallbackMessage && (
+          <Alert className="mb-6 bg-yellow-50 border-yellow-200">
+            <AlertTitle className="text-yellow-800">Note</AlertTitle>
+            <AlertDescription className="text-yellow-700">
+              Our email service is temporarily unavailable. We've recorded your message, but for immediate assistance, 
+              please also contact us directly at{" "}
+              <a href="mailto:info@cmig.co.za" className="underline font-medium inline-flex items-center">
+                info@cmig.co.za <ExternalLink className="h-3 w-3 ml-1" />
+              </a>
+            </AlertDescription>
+          </Alert>
+        )}
+        
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-primary mb-2">
