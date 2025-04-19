@@ -1,10 +1,14 @@
+
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,20 +18,14 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
     try {
-      // In a real implementation, you would send this to your backend
-      // For now, we'll simulate the email being sent
-      const emailData = {
-        to: "mandla.dlamini@cmig.co.za",
-        from: formData.email,
-        subject: `Contact Form Submission from ${formData.name}`,
-        message: formData.message,
-        phone: formData.phone
-      };
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
 
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      if (error) throw error;
 
       toast({
         title: "Thank you for your message!",
@@ -37,11 +35,14 @@ const Contact = () => {
 
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
+      console.error('Error sending message:', error);
       toast({
         title: "Error",
         description: "There was a problem sending your message. Please try again.",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -96,12 +97,13 @@ const Contact = () => {
               className="min-h-[150px]"
             />
           </div>
-          <button
+          <Button
             type="submit"
             className="w-full bg-secondary hover:bg-primary text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+            disabled={isSubmitting}
           >
-            Send Message
-          </button>
+            {isSubmitting ? "Sending..." : "Send Message"}
+          </Button>
         </form>
       </div>
     </div>
