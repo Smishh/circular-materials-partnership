@@ -179,9 +179,7 @@ const Contact = () => {
               <Phone className="h-5 w-5 text-secondary mr-3 mt-0.5" />
               <div>
                 <h3 className="font-medium">Call Us</h3>
-                <a href="tel:+27218511531" className="text-secondary hover:underline">
-                  +27 21 851 1531
-                </a>
+                <a href="tel:+27218511531" className="text-secondary hover:underline">+27 062 212 6521</a>
               </div>
             </div>
             
