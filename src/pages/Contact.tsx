@@ -5,10 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,9 +21,10 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
     
     try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: formData
       });
 
@@ -36,6 +39,7 @@ const Contact = () => {
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
       console.error('Error sending message:', error);
+      setErrorMessage(error instanceof Error ? error.message : "Unknown error occurred");
       toast({
         title: "Error",
         description: "There was a problem sending your message. Please try again.",
@@ -50,6 +54,12 @@ const Contact = () => {
     <div className="container mx-auto px-4 py-12">
       <h1 className="text-4xl font-bold text-primary mb-8">Contact Us</h1>
       <div className="max-w-2xl mx-auto">
+        {errorMessage && (
+          <Alert variant="destructive" className="mb-6">
+            <AlertTitle>Error</AlertTitle>
+            <AlertDescription>{errorMessage}</AlertDescription>
+          </Alert>
+        )}
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-primary mb-2">

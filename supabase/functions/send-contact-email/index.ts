@@ -25,6 +25,7 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const { name, email, phone, message }: ContactEmailRequest = await req.json();
+    console.log("Received form data:", { name, email, phone });
 
     // Send email to site owner
     const ownerEmailResponse = await resend.emails.send({
