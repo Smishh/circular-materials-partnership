@@ -29,7 +29,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email to site owner
     const ownerEmailResponse = await resend.emails.send({
       from: "CMIG Contact <onboarding@resend.dev>",
-      to: "mandla.dlamini@cmig.co.za",
+      to: "info@cmig.co.za", // Changed from mandla.dlamini@cmig.co.za to info@cmig.co.za
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
