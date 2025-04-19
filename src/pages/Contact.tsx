@@ -24,10 +24,25 @@ const Contact = () => {
     setErrorMessage(null);
     
     try {
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        throw new Error("Please enter a valid email address");
+      }
+      
+      // Validate required fields
+      if (!formData.name.trim() || !formData.message.trim()) {
+        throw new Error("Please fill in all required fields");
+      }
+      
+      console.log("Submitting contact form:", { ...formData, message: formData.message.substring(0, 20) + "..." });
+      
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: formData
       });
 
+      console.log("Response from function:", { data, error });
+      
       if (error) throw error;
 
       toast({
@@ -39,7 +54,7 @@ const Contact = () => {
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
       console.error('Error sending message:', error);
-      setErrorMessage(error instanceof Error ? error.message : "Unknown error occurred");
+      setErrorMessage(error instanceof Error ? error.message : "There was a problem sending your message. Please try again later.");
       toast({
         title: "Error",
         description: "There was a problem sending your message. Please try again.",

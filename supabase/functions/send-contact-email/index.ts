@@ -24,13 +24,27 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    console.log("Received request to send email");
     const { name, email, phone, message }: ContactEmailRequest = await req.json();
-    console.log("Received form data:", { name, email, phone });
+    console.log("Received form data:", { name, email, phone, message: message.substring(0, 20) + "..." });
 
+    // Validate input
+    if (!name || !email || !message) {
+      console.error("Missing required fields");
+      return new Response(
+        JSON.stringify({ error: "Missing required fields" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
+    console.log("Sending email to owner");
     // Send email to site owner
     const ownerEmailResponse = await resend.emails.send({
       from: "CMIG Contact <onboarding@resend.dev>",
-      to: "info@cmig.co.za", // Changed from mandla.dlamini@cmig.co.za to info@cmig.co.za
+      to: "info@cmig.co.za",
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -41,7 +55,9 @@ const handler = async (req: Request): Promise<Response> => {
         <p>${message}</p>
       `,
     });
+    console.log("Owner email sent:", ownerEmailResponse);
 
+    console.log("Sending confirmation to user");
     // Send confirmation email to the user
     const userEmailResponse = await resend.emails.send({
       from: "CMIG <onboarding@resend.dev>",
@@ -54,10 +70,13 @@ const handler = async (req: Request): Promise<Response> => {
         <p>Best regards,<br>CMIG Team</p>
       `,
     });
+    console.log("User email sent:", userEmailResponse);
 
-    console.log("Emails sent successfully:", { ownerEmailResponse, userEmailResponse });
-
-    return new Response(JSON.stringify({ success: true }), {
+    return new Response(JSON.stringify({ 
+      success: true,
+      ownerEmail: ownerEmailResponse,
+      userEmail: userEmailResponse
+    }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +86,11 @@ const handler = async (req: Request): Promise<Response> => {
   } catch (error: any) {
     console.error("Error in send-contact-email function:", error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ 
+        error: error.message,
+        stack: error.stack,
+        details: typeof error === 'object' ? JSON.stringify(error) : 'No details available'
+      }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
