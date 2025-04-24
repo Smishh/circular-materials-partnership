@@ -17,7 +17,7 @@ const Projects = () => {
         
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Design of Structures */}
-          <Card className="group hover:shadow-lg transition-all duration-300">
+          <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-[#E5DEFF] bg-[#F5F0FF] rounded-xl overflow-hidden">
             <CardHeader>
               <div className="flex items-center gap-4 mb-2">
                 <Building className="w-8 h-8 text-primary" />
@@ -38,7 +38,7 @@ const Projects = () => {
           </Card>
 
           {/* Condition Assessment and Diagnostics */}
-          <Card className="group hover:shadow-lg transition-all duration-300">
+          <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-[#E5DEFF] bg-[#F5F0FF] rounded-xl overflow-hidden">
             <CardHeader>
               <div className="flex items-center gap-4 mb-2">
                 <Wrench className="w-8 h-8 text-primary" />
@@ -64,3 +64,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
