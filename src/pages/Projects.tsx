@@ -1,4 +1,6 @@
-import { Building2 } from "lucide-react";
+
+import { Building2, Construction, Wrench } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Projects = () => {
   return (
@@ -13,19 +15,48 @@ const Projects = () => {
           </p>
         </div>
         
-        <div className="flex flex-col items-center justify-center space-y-6 py-12">
-          <Building2 className="w-16 h-16 text-secondary" />
-          <div className="text-center max-w-2xl mx-auto space-y-4">
-            <p className="text-xl font-semibold text-primary">
-              Project Showcase Coming Soon
-            </p>
-            <p className="text-muted-foreground">
-              We are preparing a comprehensive showcase of our groundbreaking infrastructure projects. Each project will be presented with detailed insights into our sustainable approaches, innovative solutions, and measurable impacts on communities and the environment.
-            </p>
-            <p className="text-sm text-secondary">
-              Return soon to explore our portfolio of sustainable infrastructure solutions.
-            </p>
-          </div>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Design of Structures */}
+          <Card className="group hover:shadow-lg transition-all duration-300">
+            <CardHeader>
+              <div className="flex items-center gap-4 mb-2">
+                <Construction className="w-8 h-8 text-primary" />
+                <CardTitle className="text-2xl">Design of Structures</CardTitle>
+              </div>
+              <CardDescription className="text-base">
+                Innovative structural design solutions for modern infrastructure challenges.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>• Building and infrastructure design</li>
+                <li>• Structural analysis and optimization</li>
+                <li>• Sustainable construction solutions</li>
+                <li>• Seismic design and retrofitting</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          {/* Condition Assessment and Diagnostics */}
+          <Card className="group hover:shadow-lg transition-all duration-300">
+            <CardHeader>
+              <div className="flex items-center gap-4 mb-2">
+                <Wrench className="w-8 h-8 text-primary" />
+                <CardTitle className="text-2xl">Condition Assessment & Diagnostics</CardTitle>
+              </div>
+              <CardDescription className="text-base">
+                Comprehensive evaluation and diagnosis of structural integrity and performance.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>• Structural health monitoring</li>
+                <li>• Material testing and analysis</li>
+                <li>• Deterioration assessment</li>
+                <li>• Rehabilitation recommendations</li>
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
