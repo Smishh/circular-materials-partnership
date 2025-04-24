@@ -1,5 +1,5 @@
 
-import { Building2, Construction, Wrench } from "lucide-react";
+import { Building2, Bridge, Wrench } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Projects = () => {
@@ -20,19 +20,19 @@ const Projects = () => {
           <Card className="group hover:shadow-lg transition-all duration-300">
             <CardHeader>
               <div className="flex items-center gap-4 mb-2">
-                <Construction className="w-8 h-8 text-primary" />
+                <Bridge className="w-8 h-8 text-primary" />
                 <CardTitle className="text-2xl">Design of Structures</CardTitle>
               </div>
               <CardDescription className="text-base">
-                Innovative structural design solutions for modern infrastructure challenges.
+                Expert structural engineering solutions that blend innovation with reliability, creating landmarks that stand the test of time.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-muted-foreground">
-                <li>• Building and infrastructure design</li>
-                <li>• Structural analysis and optimization</li>
-                <li>• Sustainable construction solutions</li>
-                <li>• Seismic design and retrofitting</li>
+                <li>• Advanced structural analysis and modeling</li>
+                <li>• Sustainable infrastructure development</li>
+                <li>• Custom architectural solutions</li>
+                <li>• Earthquake-resistant design</li>
               </ul>
             </CardContent>
           </Card>
