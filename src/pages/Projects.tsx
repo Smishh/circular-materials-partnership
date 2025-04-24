@@ -1,5 +1,4 @@
-
-import { Building2, Bridge, Wrench } from "lucide-react";
+import { Building2, bridge, Wrench } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Projects = () => {
@@ -20,7 +19,7 @@ const Projects = () => {
           <Card className="group hover:shadow-lg transition-all duration-300">
             <CardHeader>
               <div className="flex items-center gap-4 mb-2">
-                <Bridge className="w-8 h-8 text-primary" />
+                <bridge className="w-8 h-8 text-primary" />
                 <CardTitle className="text-2xl">Design of Structures</CardTitle>
               </div>
               <CardDescription className="text-base">
