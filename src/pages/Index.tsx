@@ -166,22 +166,29 @@ const Index = () => {
           <div>
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Sustainability and Process Engineering</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              {/* Soft Green Gradient for Sustainability */}
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
-                <div className="mb-4 text-primary"><Recycle className="w-8 h-8" /></div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">Sustainability Engineering</h3>
-                <p className="text-muted-foreground">Life Cycle Assessment, Carbon Footprinting, and Carbon Tax Consulting</p>
+              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
+                <AspectRatio ratio={16/9}>
+                  <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b" alt="Sustainability Engineering" className="object-cover w-full h-full" />
+                </AspectRatio>
+                <div className="p-6">
+                  <div className="mb-4 text-primary"><Recycle className="w-8 h-8" /></div>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Sustainability Engineering</h3>
+                  <p className="text-muted-foreground">Life Cycle Assessment, Carbon Footprinting, and Carbon Tax Consulting</p>
+                </div>
               </div>
 
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
-                <div className="mb-4 text-primary"><LineChart className="w-8 h-8" /></div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">Process Engineering</h3>
-                <p className="text-muted-foreground">Industrial Waste Utilization and Construction Materials Advisory</p>
+              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
+                <AspectRatio ratio={16/9}>
+                  <img src="https://images.unsplash.com/photo-1615729947596-a598e5de0ab3" alt="Process Engineering" className="object-cover w-full h-full" />
+                </AspectRatio>
+                <div className="p-6">
+                  <div className="mb-4 text-primary"><LineChart className="w-8 h-8" /></div>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Process Engineering</h3>
+                  <p className="text-muted-foreground">Industrial Waste Utilization and Construction Materials Advisory</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section className="py-24 bg-accent px-4">
