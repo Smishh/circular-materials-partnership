@@ -62,8 +62,10 @@ const Index = () => {
               Circular Materials and<br />Infrastructure Group
             </h1>
             {/* White strip with black text */}
-            <div className="w-full bg-white py-4 rounded-md">
-              <p className="text-sm md:text-base text-primary font-medium max-w-3xl mx-auto">Welcome to Circular Materials and Infrastructure Group - a built environment engineering company specializing in civil structural engineering and process engineering. We are committed to shaping sustainable infrastructure through sustainable engineering, innovative technologies, and a people-centric approach. Our services include design, condition assessment, maintenance, asset management, eco-friendly materials, and optimized processes. Explore our Knowledge Center for industry insights and our Materials Eco Store for sustainable construction products. Partner with us to build resilient infrastructure while minimizing environmental impact.</p>
+            <div className="w-full bg-white py-4 rounded-md px-6">
+              <p className="text-sm md:text-base text-primary font-medium max-w-4xl mx-auto text-left leading-relaxed">
+                Welcome to Circular Materials and Infrastructure Group - a built environment engineering company specializing in civil structural engineering and process engineering. We are committed to shaping sustainable infrastructure through sustainable engineering, innovative technologies, and a people-centric approach. Our services include design, condition assessment, maintenance, asset management, eco-friendly materials, and optimized processes. Explore our Knowledge Center for industry insights and our Materials Eco Store for sustainable construction products. Partner with us to build resilient infrastructure while minimizing environmental impact.
+              </p>
             </div>
             <button className="mt-8 bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary transition-colors shadow-lg">
               Contact Us
