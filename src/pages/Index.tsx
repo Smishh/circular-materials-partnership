@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
@@ -87,29 +88,48 @@ const Index = () => {
           <div className="mb-16">
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Civil and Structural Engineering</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              {/* Soft Blue Gradient for Structural Engineering */}
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
-                <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">Structural Design</h3>
-                <p className="text-muted-foreground">Innovative structural solutions for buildings and infrastructure</p>
+              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
+                <AspectRatio ratio={16/9}>
+                  <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716" alt="Structural Design" className="object-cover w-full h-full" />
+                </AspectRatio>
+                <div className="p-6">
+                  <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Structural Design</h3>
+                  <p className="text-muted-foreground">Innovative structural solutions for buildings and infrastructure</p>
+                </div>
               </div>
 
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
-                <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">Structural Integrity, Durability and Maintenance of Structures</h3>
-                <p className="text-muted-foreground">Civil Engineering, Condition Assessments, and Asset Management</p>
+              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
+                <AspectRatio ratio={16/9}>
+                  <img src="https://images.unsplash.com/photo-1465379944081-7f47de8d74ac" alt="Structural Integrity" className="object-cover w-full h-full" />
+                </AspectRatio>
+                <div className="p-6">
+                  <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Structural Integrity, Durability and Maintenance of Structures</h3>
+                  <p className="text-muted-foreground">Civil Engineering, Condition Assessments, and Asset Management</p>
+                </div>
               </div>
 
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
-                <div className="mb-4 text-primary"><Car className="w-8 h-8" /></div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">Transportation Engineering</h3>
-                <p className="text-muted-foreground">Transport Impact Assessment, Master Planning, and Road Safety Audits</p>
+              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
+                <AspectRatio ratio={16/9}>
+                  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Transportation Engineering" className="object-cover w-full h-full" />
+                </AspectRatio>
+                <div className="p-6">
+                  <div className="mb-4 text-primary"><Car className="w-8 h-8" /></div>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Transportation Engineering</h3>
+                  <p className="text-muted-foreground">Transport Impact Assessment, Master Planning, and Road Safety Audits</p>
+                </div>
               </div>
 
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
-                <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">Buildings and Residential Design</h3>
-                <p className="text-muted-foreground">Residential and Municipal Infrastructure Design</p>
+              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
+                <AspectRatio ratio={16/9}>
+                  <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
+                </AspectRatio>
+                <div className="p-6">
+                  <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Buildings and Residential Design</h3>
+                  <p className="text-muted-foreground">Residential and Municipal Infrastructure Design</p>
+                </div>
               </div>
             </div>
           </div>
@@ -118,17 +138,26 @@ const Index = () => {
           <div className="mb-16">
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Project Management</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              {/* Warm Beige Gradient for Project Management */}
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift">
-                <div className="mb-4 text-primary"><List className="w-8 h-8" /></div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">Project Planning & Control</h3>
-                <p className="text-muted-foreground">Strategic project planning, scheduling, and monitoring for optimal delivery</p>
+              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift">
+                <AspectRatio ratio={16/9}>
+                  <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" alt="Project Planning & Control" className="object-cover w-full h-full" />
+                </AspectRatio>
+                <div className="p-6">
+                  <div className="mb-4 text-primary"><List className="w-8 h-8" /></div>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Project Planning & Control</h3>
+                  <p className="text-muted-foreground">Strategic project planning, scheduling, and monitoring for optimal delivery</p>
+                </div>
               </div>
 
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift">
-                <div className="mb-4 text-primary"><Briefcase className="w-8 h-8" /></div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">Construction Management</h3>
-                <p className="text-muted-foreground">Comprehensive construction supervision and contract administration</p>
+              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift">
+                <AspectRatio ratio={16/9}>
+                  <img src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843" alt="Construction Management" className="object-cover w-full h-full" />
+                </AspectRatio>
+                <div className="p-6">
+                  <div className="mb-4 text-primary"><Briefcase className="w-8 h-8" /></div>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Construction Management</h3>
+                  <p className="text-muted-foreground">Comprehensive construction supervision and contract administration</p>
+                </div>
               </div>
             </div>
           </div>
