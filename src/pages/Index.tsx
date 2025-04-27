@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
+
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -85,27 +86,27 @@ const Index = () => {
           <div className="mb-16">
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Civil and Structural Engineering</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              {/* Using a soft blue gradient for structural engineering */}
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#E8F4FF] to-[#F5F9FF] hover:from-[#DCE9F5] hover:to-[#E8F0FA] transition-colors hover-lift">
-                <div className="mb-4 text-secondary"><Building2 className="w-8 h-8" /></div>
+              {/* Soft Blue Gradient for Structural Engineering */}
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
+                <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Structural Design</h3>
                 <p className="text-muted-foreground">Innovative structural solutions for buildings and infrastructure</p>
               </div>
 
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#E8F4FF] to-[#F5F9FF] hover:from-[#DCE9F5] hover:to-[#E8F0FA] transition-colors hover-lift">
-                <div className="mb-4 text-secondary"><Building2 className="w-8 h-8" /></div>
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
+                <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Structural Integrity, Durability and Maintenance of Structures</h3>
                 <p className="text-muted-foreground">Civil Engineering, Condition Assessments, and Asset Management</p>
               </div>
 
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#E8F4FF] to-[#F5F9FF] hover:from-[#DCE9F5] hover:to-[#E8F0FA] transition-colors hover-lift">
-                <div className="mb-4 text-secondary"><Car className="w-8 h-8" /></div>
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
+                <div className="mb-4 text-primary"><Car className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Transportation Engineering</h3>
                 <p className="text-muted-foreground">Transport Impact Assessment, Master Planning, and Road Safety Audits</p>
               </div>
 
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#E8F4FF] to-[#F5F9FF] hover:from-[#DCE9F5] hover:to-[#E8F0FA] transition-colors hover-lift">
-                <div className="mb-4 text-secondary"><Building2 className="w-8 h-8" /></div>
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
+                <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Buildings and Residential Design</h3>
                 <p className="text-muted-foreground">Residential and Municipal Infrastructure Design</p>
               </div>
@@ -116,15 +117,15 @@ const Index = () => {
           <div className="mb-16">
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Project Management</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              {/* Using a warm beige gradient for project management */}
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#FFF9F0] to-[#FFF5E6] hover:from-[#F5EFE6] hover:to-[#F5EBD6] transition-colors hover-lift">
-                <div className="mb-4 text-secondary"><List className="w-8 h-8" /></div>
+              {/* Warm Beige Gradient for Project Management */}
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift">
+                <div className="mb-4 text-primary"><List className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Project Planning & Control</h3>
                 <p className="text-muted-foreground">Strategic project planning, scheduling, and monitoring for optimal delivery</p>
               </div>
 
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#FFF9F0] to-[#FFF5E6] hover:from-[#F5EFE6] hover:to-[#F5EBD6] transition-colors hover-lift">
-                <div className="mb-4 text-secondary"><Briefcase className="w-8 h-8" /></div>
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift">
+                <div className="mb-4 text-primary"><Briefcase className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Construction Management</h3>
                 <p className="text-muted-foreground">Comprehensive construction supervision and contract administration</p>
               </div>
@@ -135,15 +136,15 @@ const Index = () => {
           <div>
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Sustainability and Process Engineering</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              {/* Using a soft green gradient for sustainability */}
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#F0FFF4] to-[#F5FFF9] hover:from-[#E6F5EA] hover:to-[#EBF5EF] transition-colors hover-lift">
-                <div className="mb-4 text-secondary"><Recycle className="w-8 h-8" /></div>
+              {/* Soft Green Gradient for Sustainability */}
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
+                <div className="mb-4 text-primary"><Recycle className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Sustainability Engineering</h3>
                 <p className="text-muted-foreground">Life Cycle Assessment, Carbon Footprinting, and Carbon Tax Consulting</p>
               </div>
 
-              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#F0FFF4] to-[#F5FFF9] hover:from-[#E6F5EA] hover:to-[#EBF5EF] transition-colors hover-lift">
-                <div className="mb-4 text-secondary"><LineChart className="w-8 h-8" /></div>
+              <div ref={addToRefs} className="reveal p-6 rounded-xl bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
+                <div className="mb-4 text-primary"><LineChart className="w-8 h-8" /></div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">Process Engineering</h3>
                 <p className="text-muted-foreground">Industrial Waste Utilization and Construction Materials Advisory</p>
               </div>
