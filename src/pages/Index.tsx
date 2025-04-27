@@ -8,6 +8,7 @@ const Index = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const lastScrollY = useRef(0);
   const backgroundImages = ['/lovable-uploads/12b8048d-295a-4ba8-b101-a4fed50412d0.png', '/lovable-uploads/adcaf296-1897-4def-858c-28106bd1a920.png'];
+  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -18,7 +19,9 @@ const Index = () => {
     }, {
       threshold: 0.1
     });
+    
     revealRefs.current.forEach(ref => observer.observe(ref));
+    
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (Math.abs(currentScrollY - lastScrollY.current) > 50) {
@@ -26,30 +29,40 @@ const Index = () => {
         lastScrollY.current = currentScrollY;
       }
     };
+    
     window.addEventListener('scroll', handleScroll);
+    
     return () => {
       observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
   const addToRefs = (el: HTMLDivElement) => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
     }
   };
+  
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background images container */}
         <div className="absolute inset-0 w-full h-full">
-          {backgroundImages.map((image, index) => <div key={image} className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out ${index === currentImageIndex ? 'translate-x-0' : 'translate-x-full'}`} style={{
-          backgroundImage: `url("${image}")`,
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          zIndex: index === currentImageIndex ? 1 : 0
-        }} />)}
+          {backgroundImages.map((image, index) => (
+            <div 
+              key={image} 
+              className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out ${index === currentImageIndex ? 'translate-x-0' : 'translate-x-full'}`} 
+              style={{
+                backgroundImage: `url("${image}")`,
+                backgroundSize: 'contain',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                zIndex: index === currentImageIndex ? 1 : 0
+              }} 
+            />
+          ))}
           {/* Gradient overlay for better readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-[2]"></div>
         </div>
