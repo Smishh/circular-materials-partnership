@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -36,7 +37,8 @@ const Index = () => {
       revealRefs.current.push(el);
     }
   };
-  return <div className="min-h-screen">
+  return (
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background images container */}
@@ -189,6 +191,8 @@ const Index = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section className="py-24 bg-accent px-4">
@@ -221,7 +225,8 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
 
 export default Index;
