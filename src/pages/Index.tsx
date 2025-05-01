@@ -137,7 +137,7 @@ const Index = () => {
 
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
                 <AspectRatio ratio={16/9}>
-                  <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
+                  <img src="/lovable-uploads/aa9fcc5d-01f3-4447-af54-0b25513d1d46.png" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
