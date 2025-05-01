@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -138,7 +137,7 @@ const Index = () => {
 
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
                 <AspectRatio ratio={16/9}>
-                  <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
+                  <img src="/lovable-uploads/714e0302-ade5-4ade-b0e3-988a3b0eaeec.png" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
