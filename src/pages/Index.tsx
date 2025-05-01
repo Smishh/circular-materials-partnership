@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -113,14 +114,15 @@ const Index = () => {
                 </div>
               </div>
 
+              {/* Swapped position: Buildings and Residential Design now second */}
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
                 <AspectRatio ratio={16/9}>
-                  <img src="/lovable-uploads/1d16b99d-61e6-4bba-925c-bebe7c85e4b1.png" alt="Structural Integrity" className="object-cover w-full h-full" />
+                  <img src="/lovable-uploads/714e0302-ade5-4ade-b0e3-988a3b0eaeec.png" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Structural Integrity, Durability and Maintenance of Structures</h3>
-                  <p className="text-muted-foreground">Civil Engineering, Condition Assessments, and Asset Management</p>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Buildings and Residential Design</h3>
+                  <p className="text-muted-foreground">Residential and Municipal Infrastructure Design</p>
                 </div>
               </div>
 
@@ -135,14 +137,15 @@ const Index = () => {
                 </div>
               </div>
 
+              {/* Swapped position: Structural Integrity now fourth */}
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
                 <AspectRatio ratio={16/9}>
-                  <img src="/lovable-uploads/714e0302-ade5-4ade-b0e3-988a3b0eaeec.png" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
+                  <img src="/lovable-uploads/1d16b99d-61e6-4bba-925c-bebe7c85e4b1.png" alt="Structural Integrity" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Buildings and Residential Design</h3>
-                  <p className="text-muted-foreground">Residential and Municipal Infrastructure Design</p>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Structural Integrity, Durability and Maintenance of Structures</h3>
+                  <p className="text-muted-foreground">Civil Engineering, Condition Assessments, and Asset Management</p>
                 </div>
               </div>
             </div>
