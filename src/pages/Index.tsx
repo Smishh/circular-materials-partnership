@@ -157,7 +157,7 @@ const Index = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift">
                 <AspectRatio ratio={16/9}>
-                  <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" alt="Project Planning & Control" className="object-cover w-full h-full" />
+                  <img src="/lovable-uploads/97bc42b6-c787-4283-8bd5-ad3c531ffdad.png" alt="Project Planning & Control" className="object-cover w-full h-full object-center brightness-95 contrast-105" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><List className="w-8 h-8" /></div>
