@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import LogoPatternBackground from "@/components/LogoPatternBackground";
+
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
   useEffect(() => {
@@ -75,7 +76,7 @@ const Index = () => {
           <div className="mb-16">
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Civil and Structural Engineering</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
+              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F2FCE2] to-[#C6E6C5] hover:from-[#E2ECD2] hover:to-[#B6D6B5] transition-colors hover-lift">
                 <AspectRatio ratio={16 / 9}>
                   <img src="/lovable-uploads/6c30ec4f-0271-4741-9de2-bd883671e9d6.png" alt="Structural Design" className="object-cover w-full h-full" />
                 </AspectRatio>
@@ -99,7 +100,7 @@ const Index = () => {
               </div>
 
               {/* Transportation Engineering card */}
-              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
+              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F2FCE2] to-[#C6E6C5] hover:from-[#E2ECD2] hover:to-[#B6D6B5] transition-colors hover-lift">
                 <AspectRatio ratio={16 / 9}>
                   <img src="/lovable-uploads/b5ec8f1c-16d7-44f7-a423-a79f6984dfc3.png" alt="Transportation Engineering" className="object-cover w-full h-full" />
                 </AspectRatio>
@@ -215,4 +216,5 @@ const Index = () => {
       </section>
     </div>;
 };
+
 export default Index;
