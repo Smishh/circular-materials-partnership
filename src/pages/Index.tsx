@@ -1,7 +1,7 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import LogoPatternBackground from "@/components/LogoPatternBackground";
 
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
@@ -90,8 +90,9 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-white px-4">
-        <div className="container mx-auto">
+      <section className="py-24 bg-white px-4 relative">
+        <LogoPatternBackground />
+        <div className="container mx-auto relative z-10">
           <div ref={addToRefs} className="reveal text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-primary">Our Services</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
