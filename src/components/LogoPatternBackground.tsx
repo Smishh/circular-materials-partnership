@@ -6,75 +6,42 @@ interface LogoPatternBackgroundProps {
 }
 
 const LogoPatternBackground: React.FC<LogoPatternBackgroundProps> = ({ className = '' }) => {
+  // Create a hexagonal grid pattern
+  const rows = 12;
+  const itemsPerRow = 12;
+  const hexGrid = [];
+  
+  // Calculate spacing
+  const horizontalGap = 180;  // horizontal gap between logos
+  const verticalGap = 160;    // vertical gap between rows
+  const offsetPerRow = horizontalGap / 2; // offset for even rows to create hexagon pattern
+  
+  // Generate hex grid
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < itemsPerRow; col++) {
+      const isEvenRow = row % 2 === 0;
+      const horizontalOffset = isEvenRow ? 0 : offsetPerRow;
+      
+      hexGrid.push({
+        top: row * verticalGap,
+        left: col * horizontalGap + horizontalOffset,
+        key: `hex-${row}-${col}`
+      });
+    }
+  }
+  
   return (
     <div className={`absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0 ${className}`}>
       <div className="relative w-full h-full">
-        {/* First row */}
-        {[...Array(12)].map((_, i) => (
+        {hexGrid.map((position) => (
           <img 
-            key={`row1-${i}`}
+            key={position.key}
             src="/lovable-uploads/8a8c6a80-5bd8-48bf-aa22-01e80ef02631.png" 
             alt="" 
             className="absolute opacity-[0.08] w-8 md:w-12"
             style={{
-              top: `${Math.floor(i / 4) * 160}px`,
-              left: `${(i % 4) * 240}px`,
-            }}
-          />
-        ))}
-        
-        {/* Second row (offset) */}
-        {[...Array(12)].map((_, i) => (
-          <img 
-            key={`row2-${i}`}
-            src="/lovable-uploads/8a8c6a80-5bd8-48bf-aa22-01e80ef02631.png" 
-            alt="" 
-            className="absolute opacity-[0.08] w-8 md:w-12"
-            style={{
-              top: `${Math.floor(i / 4) * 160 + 80}px`,
-              left: `${(i % 4) * 240 + 120}px`,
-            }}
-          />
-        ))}
-        
-        {/* Third row */}
-        {[...Array(12)].map((_, i) => (
-          <img 
-            key={`row3-${i}`}
-            src="/lovable-uploads/8a8c6a80-5bd8-48bf-aa22-01e80ef02631.png" 
-            alt="" 
-            className="absolute opacity-[0.08] w-8 md:w-12"
-            style={{
-              top: `${Math.floor(i / 4) * 160 + 160}px`,
-              left: `${(i % 4) * 240}px`,
-            }}
-          />
-        ))}
-
-        {/* Fourth row (offset) */}
-        {[...Array(12)].map((_, i) => (
-          <img 
-            key={`row4-${i}`}
-            src="/lovable-uploads/8a8c6a80-5bd8-48bf-aa22-01e80ef02631.png" 
-            alt="" 
-            className="absolute opacity-[0.08] w-8 md:w-12"
-            style={{
-              top: `${Math.floor(i / 4) * 160 + 240}px`,
-              left: `${(i % 4) * 240 + 120}px`,
-            }}
-          />
-        ))}
-
-        {/* Fifth row */}
-        {[...Array(12)].map((_, i) => (
-          <img 
-            key={`row5-${i}`}
-            src="/lovable-uploads/8a8c6a80-5bd8-48bf-aa22-01e80ef02631.png" 
-            alt="" 
-            className="absolute opacity-[0.08] w-8 md:w-12"
-            style={{
-              top: `${Math.floor(i / 4) * 160 + 320}px`,
-              left: `${(i % 4) * 240}px`,
+              top: `${position.top}px`,
+              left: `${position.left}px`,
             }}
           />
         ))}
