@@ -125,6 +125,7 @@ const Index = () => {
                 </div>
               </div>
 
+              {/* Swapped position: Transportation Engineering card */}
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
                 <AspectRatio ratio={16/9}>
                   <img src="/lovable-uploads/b5ec8f1c-16d7-44f7-a423-a79f6984dfc3.png" alt="Transportation Engineering" className="object-cover w-full h-full" />
@@ -156,7 +157,7 @@ const Index = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift">
                 <AspectRatio ratio={16/9}>
-                  <img src="/lovable-uploads/97bc42b6-c787-4283-8bd5-ad3c531ffdad.png" alt="Project Planning & Control" className="object-cover w-full h-full object-center brightness-95 contrast-105" />
+                  <img src="/lovable-uploads/03cef32f-160f-4cbc-8a75-a0b6e2283011.png" alt="Project Planning & Control" className="object-cover w-full h-full object-center brightness-95 contrast-105" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><List className="w-8 h-8" /></div>
