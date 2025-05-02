@@ -1,9 +1,7 @@
-
 import { useEffect, useRef } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import LogoPatternBackground from "@/components/LogoPatternBackground";
-
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
   useEffect(() => {
@@ -53,9 +51,7 @@ const Index = () => {
             </h1>
             {/* Refined white strip with improved typography and spacing - reduced padding */}
             <div className="w-full max-w-4xl mx-auto bg-white/95 backdrop-blur-sm py-4 px-6 md:px-8 rounded-xl shadow-md">
-              <p className="text-sm md:text-base text-primary/90 font-normal leading-relaxed">
-                Welcome to Circular Materials and Infrastructure Group - a built environment engineering company specializing in civil structural engineering and process engineering. We are committed to shaping sustainable infrastructure through sustainable engineering, innovative technologies, and a people-centric approach. Our services include design, condition assessment, maintenance, asset management, eco-friendly materials, and optimized processes. Explore our Knowledge Center for industry insights and our Materials Eco Store for sustainable construction products. Partner with us to build resilient infrastructure while minimizing environmental impact.
-              </p>
+              <p className="text-sm md:text-base text-primary/90 font-normal leading-relaxed">Welcome to Circular Materials and Infrastructure Group - a built environment engineering company specializing in civil structural engineering and process engineering. We are committed to shaping sustainable infrastructure through sustainable engineering, innovative technologies, and a people-centric approach. Our services include design, condition assessment, maintenance, asset management, eco-friendly materials, and optimized processes. Explore our Knowledge Center for industry insights and our Materials Eco Store for sustainable construction products. Partner with us to build resilient infrastructure while minimizing environmexntal impact.</p>
             </div>
             <button className="mt-6 bg-secondary text-white px-6 py-2 rounded-lg hover:bg-primary transition-colors shadow-lg">
               Contact Us
@@ -219,5 +215,4 @@ const Index = () => {
       </section>
     </div>;
 };
-
 export default Index;
