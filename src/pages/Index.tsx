@@ -105,7 +105,7 @@ const Index = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
                 <AspectRatio ratio={16/9}>
-                  <img src="/lovable-uploads/7227fea2-914b-4534-92e5-b42f8b83c007.png" alt="Structural Design" className="object-cover w-full h-full" />
+                  <img src="/lovable-uploads/6c30ec4f-0271-4741-9de2-bd883671e9d6.png" alt="Structural Design" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
