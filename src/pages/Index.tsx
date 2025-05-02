@@ -96,19 +96,19 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Swapped position: Buildings and Residential Design now second */}
-              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
+              {/* Updated Buildings and Residential Design card with new image */}
+              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F2FCE2] to-[#C6E6C5] hover:from-[#E2ECD2] hover:to-[#B6D6B5] transition-colors hover-lift">
                 <AspectRatio ratio={16/9}>
-                  <img src="/lovable-uploads/714e0302-ade5-4ade-b0e3-988a3b0eaeec.png" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
+                  <img src="/lovable-uploads/5fe76a79-f29c-4467-934a-a64555a3ba9e.png" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Buildings and Residential Design</h3>
-                  <p className="text-muted-foreground">Residential and Municipal Infrastructure Design</p>
+                  <p className="text-muted-foreground">Comprehensive residential design with sustainable building systems</p>
                 </div>
               </div>
 
-              {/* Swapped position: Transportation Engineering card */}
+              {/* Transportation Engineering card */}
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
                 <AspectRatio ratio={16/9}>
                   <img src="/lovable-uploads/b5ec8f1c-16d7-44f7-a423-a79f6984dfc3.png" alt="Transportation Engineering" className="object-cover w-full h-full" />
@@ -120,7 +120,7 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Swapped position: Structural Integrity now fourth */}
+              {/* Structural Integrity card */}
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
                 <AspectRatio ratio={16/9}>
                   <img src="/lovable-uploads/1d16b99d-61e6-4bba-925c-bebe7c85e4b1.png" alt="Structural Integrity" className="object-cover w-full h-full" />
