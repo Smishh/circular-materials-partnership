@@ -31,7 +31,7 @@ const LogoPatternBackground: React.FC<LogoPatternBackgroundProps> = ({ className
   }
   
   return (
-    <div className={`absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0 ${className}`}>
+    <div className={`absolute inset-0 w-full h-[calc(100%-100px)] overflow-hidden pointer-events-none z-0 ${className}`}>
       <div className="relative w-full h-full">
         {hexGrid.map((position) => (
           <img 
