@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -28,15 +29,17 @@ const Index = () => {
   return <div className="min-h-screen">
       {/* Hero Section - reduced height */}
       <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
-        {/* Background image with reduced opacity */}
+        {/* Background image with darker overlay for better contrast */}
         <div className="absolute inset-0 w-full h-full">
           {/* Using new image as background overlay with reduced opacity */}
           <div className="absolute inset-0 bg-cover bg-center z-[2]" style={{
           backgroundImage: `url("/lovable-uploads/1ea32cab-fe93-4387-967e-900cd2803011.png")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.8
+          opacity: 0.7
         }}></div>
+          {/* Adding a dark overlay for better contrast */}
+          <div className="absolute inset-0 bg-black opacity-40 z-[3]"></div>
         </div>
         
         <div className="container mx-auto text-center z-10">
