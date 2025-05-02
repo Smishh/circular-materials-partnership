@@ -1,13 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import LogoPatternBackground from "@/components/LogoPatternBackground";
 
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const lastScrollY = useRef(0);
-  const backgroundImages = ['/lovable-uploads/12b8048d-295a-4ba8-b101-a4fed50412d0.png', '/lovable-uploads/adcaf296-1897-4def-858c-28106bd1a920.png'];
   
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -22,19 +19,8 @@ const Index = () => {
     
     revealRefs.current.forEach(ref => observer.observe(ref));
     
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (Math.abs(currentScrollY - lastScrollY.current) > 50) {
-        setCurrentImageIndex(prev => prev === 0 ? 1 : 0);
-        lastScrollY.current = currentScrollY;
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    
     return () => {
       observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
   
@@ -48,22 +34,9 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background images container */}
+        {/* Background image */}
         <div className="absolute inset-0 w-full h-full">
-          {backgroundImages.map((image, index) => (
-            <div 
-              key={image} 
-              className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out ${index === currentImageIndex ? 'translate-x-0' : 'translate-x-full'}`} 
-              style={{
-                backgroundImage: `url("${image}")`,
-                backgroundSize: 'contain',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                zIndex: index === currentImageIndex ? 1 : 0
-              }} 
-            />
-          ))}
-          {/* Using new image as background overlay instead of gradient */}
+          {/* Using new image as background overlay */}
           <div 
             className="absolute inset-0 bg-cover bg-center z-[2]" 
             style={{
