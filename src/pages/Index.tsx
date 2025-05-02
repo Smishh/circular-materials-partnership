@@ -2,10 +2,8 @@ import { useEffect, useRef } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import LogoPatternBackground from "@/components/LogoPatternBackground";
-
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
-  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -16,36 +14,28 @@ const Index = () => {
     }, {
       threshold: 0.1
     });
-    
     revealRefs.current.forEach(ref => observer.observe(ref));
-    
     return () => {
       observer.disconnect();
     };
   }, []);
-  
   const addToRefs = (el: HTMLDivElement) => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
     }
   };
-  
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 w-full h-full">
           {/* Using new image as background overlay */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center z-[2]" 
-            style={{
-              backgroundImage: `url("/lovable-uploads/1ea32cab-fe93-4387-967e-900cd2803011.png")`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              opacity: 0.85
-            }}
-          ></div>
+          <div className="absolute inset-0 bg-cover bg-center z-[2]" style={{
+          backgroundImage: `url("/lovable-uploads/1ea32cab-fe93-4387-967e-900cd2803011.png")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.85
+        }}></div>
         </div>
         
         <div className="container mx-auto text-center z-10">
@@ -54,7 +44,7 @@ const Index = () => {
               <img src="/lovable-uploads/8a8c6a80-5bd8-48bf-aa22-01e80ef02631.png" alt="CMIG Logo" className="w-32 h-32" />
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight text-white drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight drop-shadow-lg text-red-600">
               Circular Materials and<br />Infrastructure Group
             </h1>
             {/* Refined white strip with improved typography and spacing */}
@@ -86,7 +76,7 @@ const Index = () => {
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Civil and Structural Engineering</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
-                <AspectRatio ratio={16/9}>
+                <AspectRatio ratio={16 / 9}>
                   <img src="/lovable-uploads/6c30ec4f-0271-4741-9de2-bd883671e9d6.png" alt="Structural Design" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
@@ -98,7 +88,7 @@ const Index = () => {
 
               {/* Updated Buildings and Residential Design card with new image */}
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F2FCE2] to-[#C6E6C5] hover:from-[#E2ECD2] hover:to-[#B6D6B5] transition-colors hover-lift">
-                <AspectRatio ratio={16/9}>
+                <AspectRatio ratio={16 / 9}>
                   <img src="/lovable-uploads/5fe76a79-f29c-4467-934a-a64555a3ba9e.png" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
@@ -110,7 +100,7 @@ const Index = () => {
 
               {/* Transportation Engineering card */}
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
-                <AspectRatio ratio={16/9}>
+                <AspectRatio ratio={16 / 9}>
                   <img src="/lovable-uploads/b5ec8f1c-16d7-44f7-a423-a79f6984dfc3.png" alt="Transportation Engineering" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
@@ -122,7 +112,7 @@ const Index = () => {
 
               {/* Structural Integrity card */}
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
-                <AspectRatio ratio={16/9}>
+                <AspectRatio ratio={16 / 9}>
                   <img src="/lovable-uploads/1d16b99d-61e6-4bba-925c-bebe7c85e4b1.png" alt="Structural Integrity" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
@@ -139,7 +129,7 @@ const Index = () => {
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Project Management</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift">
-                <AspectRatio ratio={16/9}>
+                <AspectRatio ratio={16 / 9}>
                   <img src="/lovable-uploads/03cef32f-160f-4cbc-8a75-a0b6e2283011.png" alt="Project Planning & Control" className="object-cover w-full h-full object-center brightness-95 contrast-105" />
                 </AspectRatio>
                 <div className="p-6">
@@ -150,7 +140,7 @@ const Index = () => {
               </div>
 
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift">
-                <AspectRatio ratio={16/9}>
+                <AspectRatio ratio={16 / 9}>
                   <img src="/lovable-uploads/729ce36c-0ff7-4e6c-8fe7-e6b0345e37c1.png" alt="Construction Management" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
@@ -167,7 +157,7 @@ const Index = () => {
             <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Sustainability and Process Engineering</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
-                <AspectRatio ratio={16/9}>
+                <AspectRatio ratio={16 / 9}>
                   <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b" alt="Sustainability Engineering" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
@@ -178,7 +168,7 @@ const Index = () => {
               </div>
 
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
-                <AspectRatio ratio={16/9}>
+                <AspectRatio ratio={16 / 9}>
                   <img src="https://images.unsplash.com/photo-1615729947596-a598e5de0ab3" alt="Process Engineering" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
@@ -223,8 +213,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
