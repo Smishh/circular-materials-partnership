@@ -63,8 +63,16 @@ const Index = () => {
               }} 
             />
           ))}
-          {/* Gradient overlay for better readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-[2]"></div>
+          {/* Using new image as background overlay instead of gradient */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center z-[2]" 
+            style={{
+              backgroundImage: `url("/lovable-uploads/1ea32cab-fe93-4387-967e-900cd2803011.png")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              opacity: 0.85
+            }}
+          ></div>
         </div>
         
         <div className="container mx-auto text-center z-10">
