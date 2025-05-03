@@ -80,6 +80,9 @@ html {
 [data-radix-collapsible-content] {
   overflow: visible !important;
   display: block !important;
+  height: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Article styling */
