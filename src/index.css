@@ -76,13 +76,25 @@ html {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
 }
 
-/* Make CollapsibleContent display properly */
+/* Fix Radix UI components visibility issues */
 [data-radix-collapsible-content] {
   overflow: visible !important;
   display: block !important;
   height: auto !important;
   visibility: visible !important;
   opacity: 1 !important;
+  transition: none !important;
+}
+
+[data-state="open"] {
+  overflow: visible !important;
+  height: auto !important;
+}
+
+/* Stop animations that might be causing issues */
+.data-\[state\=closed\]\:animate-accordion-up,
+.data-\[state\=open\]\:animate-accordion-down {
+  animation: none !important;
 }
 
 /* Article styling */
