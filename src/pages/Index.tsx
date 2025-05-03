@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -25,6 +24,7 @@ const Index = () => {
       revealRefs.current.push(el);
     }
   };
+  
   return <div className="min-h-screen">
       {/* Hero Section - reduced height */}
       <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
@@ -173,7 +173,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
 
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
                 <AspectRatio ratio={16 / 9}>
-                  <img src="https://images.unsplash.com/photo-1615729947596-a598e5de0ab3" alt="Process Engineering" className="object-cover w-full h-full" />
+                  <img src="/lovable-uploads/12073454-b801-4cc5-b62e-05cde7330070.png" alt="Process Engineering" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><LineChart className="w-8 h-8" /></div>
