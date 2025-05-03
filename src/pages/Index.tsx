@@ -1,9 +1,12 @@
+
 import { useEffect, useRef } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import LogoPatternBackground from "@/components/LogoPatternBackground";
+
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
+  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -14,16 +17,20 @@ const Index = () => {
     }, {
       threshold: 0.1
     });
+    
     revealRefs.current.forEach(ref => observer.observe(ref));
+    
     return () => {
       observer.disconnect();
     };
   }, []);
+  
   const addToRefs = (el: HTMLDivElement) => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
     }
   };
+  
   return <div className="min-h-screen">
       {/* Hero Section - reduced height */}
       <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
@@ -83,8 +90,10 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                   <img src="/lovable-uploads/6c30ec4f-0271-4741-9de2-bd883671e9d6.png" alt="Structural Design" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
-                  <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Structural Design</h3>
+                  <div className="flex items-center mb-2">
+                    <Building2 className="w-6 h-6 text-primary mr-2" />
+                    <h3 className="text-xl font-semibold text-primary">Structural Design</h3>
+                  </div>
                   <p className="text-muted-foreground">We take responsibility for the design of structures on your project, from planning, concept design, detailed design, supervision and completion. Review our previous projects here. </p>
                 </div>
               </div>
@@ -95,9 +104,11 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                   <img src="/lovable-uploads/5fe76a79-f29c-4467-934a-a64555a3ba9e.png" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
-                  <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Residential and Appartment Building Design</h3>
-                  <p className="text-muted-foreground">At CMIG we take pride in taking responsibility for the fully lifecycle of residential projects. We understand, that for our customres, a home is more than just a set of structural elements, assembled together, it is a lifeinvestment. </p>
+                  <div className="flex items-center mb-2">
+                    <Building2 className="w-6 h-6 text-primary mr-2" />
+                    <h3 className="text-xl font-semibold text-primary">Residential and Appartment Building Design</h3>
+                  </div>
+                  <p className="text-muted-foreground">At CMIG we take pride in taking responsibility for the fully lifecycle of residential projects. We understand, that for our customres, a home is more than just a set of structural elements, assembled together, it is a lifeinvestment. </p>
                 </div>
               </div>
 
@@ -107,8 +118,10 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                   <img src="/lovable-uploads/b5ec8f1c-16d7-44f7-a423-a79f6984dfc3.png" alt="Transportation Engineering" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
-                  <div className="mb-4 text-primary"><Car className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Transportation Engineering</h3>
+                  <div className="flex items-center mb-2">
+                    <Car className="w-6 h-6 text-primary mr-2" />
+                    <h3 className="text-xl font-semibold text-primary">Transportation Engineering</h3>
+                  </div>
                   <p className="text-muted-foreground">Transport Impact Assessment, Master Planning, and Road Safety Audits</p>
                 </div>
               </div>
@@ -119,9 +132,11 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                   <img src="/lovable-uploads/1d16b99d-61e6-4bba-925c-bebe7c85e4b1.png" alt="Structural Integrity" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
-                  <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Structural Integrity, Durability and Maintenance of Structures</h3>
-                  <p className="text-muted-foreground">Infrastructure, is the back bone of all industrial activities, at CMIG, we have a long track record of conducting assessments of a wide range of important infrastructure, providing our clients with rich, detailed and accessible reports and data, that help decision makers make the best decisions, in the long term and short term. </p>
+                  <div className="flex items-center mb-2">
+                    <Building2 className="w-6 h-6 text-primary mr-2" />
+                    <h3 className="text-xl font-semibold text-primary">Structural Integrity, Durability and Maintenance of Structures</h3>
+                  </div>
+                  <p className="text-muted-foreground">Infrastructure, is the back bone of all industrial activities, at CMIG, we have a long track record of conducting assessments of a wide range of important infrastructure, providing our clients with rich, detailed and accessible reports and data, that help decision makers make the best decisions, in the long term and short term. </p>
                 </div>
               </div>
             </div>
@@ -136,8 +151,10 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                   <img src="/lovable-uploads/03cef32f-160f-4cbc-8a75-a0b6e2283011.png" alt="Project Planning & Control" className="object-cover w-full h-full object-center brightness-95 contrast-105" />
                 </AspectRatio>
                 <div className="p-6">
-                  <div className="mb-4 text-primary"><List className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Project Planning & Control</h3>
+                  <div className="flex items-center mb-2">
+                    <List className="w-6 h-6 text-primary mr-2" />
+                    <h3 className="text-xl font-semibold text-primary">Project Planning & Control</h3>
+                  </div>
                   <p className="text-muted-foreground">Strategic project planning, scheduling, and monitoring for optimal delivery</p>
                 </div>
               </div>
@@ -147,8 +164,10 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                   <img src="/lovable-uploads/729ce36c-0ff7-4e6c-8fe7-e6b0345e37c1.png" alt="Construction Management" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
-                  <div className="mb-4 text-primary"><Briefcase className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Construction Management</h3>
+                  <div className="flex items-center mb-2">
+                    <Briefcase className="w-6 h-6 text-primary mr-2" />
+                    <h3 className="text-xl font-semibold text-primary">Construction Management</h3>
+                  </div>
                   <p className="text-muted-foreground">Comprehensive construction supervision and contract administration</p>
                 </div>
               </div>
@@ -164,8 +183,10 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                   <img src="/lovable-uploads/a04f28ae-ca31-48dc-b38a-e92c96ea9c1a.png" alt="Sustainability Engineering" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
-                  <div className="mb-4 text-primary"><Recycle className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Sustainability Engineering</h3>
+                  <div className="flex items-center mb-2">
+                    <Recycle className="w-6 h-6 text-primary mr-2" />
+                    <h3 className="text-xl font-semibold text-primary">Sustainability Engineering</h3>
+                  </div>
                   <p className="text-muted-foreground">Life Cycle Assessment, Carbon Footprinting, and Carbon Tax Consulting</p>
                 </div>
               </div>
@@ -175,8 +196,10 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                   <img src="/lovable-uploads/d2d91bd1-d30f-4f25-8695-578eb7d1c431.png" alt="Mining and Industrial Waste Beneficiation" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
-                  <div className="mb-4 text-primary"><LineChart className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Mining and Industrial Waste Beneficiation</h3>
+                  <div className="flex items-center mb-2">
+                    <LineChart className="w-6 h-6 text-primary mr-2" />
+                    <h3 className="text-xl font-semibold text-primary">Mining and Industrial Waste Beneficiation</h3>
+                  </div>
                   <p className="text-muted-foreground">Industrial Waste Utilization and Construction Materials Advisory</p>
                 </div>
               </div>
@@ -218,4 +241,5 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
       </section>
     </div>;
 };
+
 export default Index;
