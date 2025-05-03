@@ -2,10 +2,8 @@ import { useEffect, useRef } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import LogoPatternBackground from "@/components/LogoPatternBackground";
-
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
-
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -16,20 +14,16 @@ const Index = () => {
     }, {
       threshold: 0.1
     });
-
     revealRefs.current.forEach(ref => observer.observe(ref));
-
     return () => {
       observer.disconnect();
     };
   }, []);
-
   const addToRefs = (el: HTMLDivElement) => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
     }
   };
-
   return <div className="min-h-screen">
       {/* Hero Section - reduced height */}
       <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
@@ -102,8 +96,8 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Buildings and Residential Design</h3>
-                  <p className="text-muted-foreground">Comprehensive residential design with sustainable building systems</p>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Residential and Appartment Building Design</h3>
+                  <p className="text-muted-foreground">At CMIG we take pride in taking responsibility for the fully lifecycle of residential projects. We understand, that for our customres, a home is more than just a set of structural elements, assembled together, it is a lifeinvestment. </p>
                 </div>
               </div>
 
@@ -127,7 +121,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                 <div className="p-6">
                   <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Structural Integrity, Durability and Maintenance of Structures</h3>
-                  <p className="text-muted-foreground">Civil Engineering, Condition Assessments, and Asset Management</p>
+                  <p className="text-muted-foreground">Infrastructure, is the back bone of all industrial activities, at CMIG, we have a long track record of conducting assessments of a wide range of important infrastructure, providing our clients with rich, detailed and accessible reports and data, that help decision makers make the best decisions, in the long term and short term. </p>
                 </div>
               </div>
             </div>
@@ -224,5 +218,4 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
       </section>
     </div>;
 };
-
 export default Index;
