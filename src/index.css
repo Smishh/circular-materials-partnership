@@ -39,6 +39,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Service card styling */
+.rounded-xl .text-muted-foreground {
+  @apply text-gray-800;
+}
+
 /* Article styling */
 .prose h1 {
   @apply text-3xl font-bold mb-4 text-primary;
