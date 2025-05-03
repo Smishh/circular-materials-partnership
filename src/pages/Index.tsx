@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -85,7 +86,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                 <div className="p-6">
                   <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Structural Design</h3>
-                  <p className="text-muted-foreground">We take responsibility for the design of structures on your project, from planning, concept design, detailed design, supervision and completion. Review our previous projects here. </p>
+                  <p className="text-muted-foreground">We take responsibility for the design of structures on your project, from planning, concept design, detailed design, supervision and completion. Review our previous projects here. </p>
                 </div>
               </div>
 
@@ -172,7 +173,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
 
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
                 <AspectRatio ratio={16 / 9}>
-                  <img src="https://images.unsplash.com/photo-1615729947596-a598e5de0ab3" alt="Process Engineering" className="object-cover w-full h-full" />
+                  <img src="/lovable-uploads/7227fea2-914b-4534-92e5-b42f8b83c007.png" alt="Mining and Industrial Waste Beneficiation" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><LineChart className="w-8 h-8" /></div>
