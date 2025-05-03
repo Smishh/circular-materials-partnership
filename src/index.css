@@ -68,7 +68,18 @@ html {
 
 /* Remove underline from collapsible trigger */
 .collapsible-trigger:hover {
-  text-decoration: none;
+  text-decoration: none !important;
+}
+
+/* Ensure visible shadows on cards */
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Make CollapsibleContent display properly */
+[data-radix-collapsible-content] {
+  overflow: visible !important;
+  display: block !important;
 }
 
 /* Article styling */
