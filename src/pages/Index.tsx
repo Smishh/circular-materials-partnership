@@ -178,7 +178,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
 
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
                 <AspectRatio ratio={16 / 9}>
-                  <img src="/lovable-uploads/7227fea2-914b-4534-92e5-b42f8b83c007.png" alt="Mining and Industrial Waste Beneficiation" className="object-cover w-full h-full" />
+                  <img src="/lovable-uploads/d2d91bd1-d30f-4f25-8695-578eb7d1c431.png" alt="Mining and Industrial Waste Beneficiation" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><LineChart className="w-8 h-8" /></div>
