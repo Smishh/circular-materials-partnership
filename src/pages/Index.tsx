@@ -167,7 +167,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
                 <AspectRatio ratio={16 / 9}>
-                  <img src="/lovable-uploads/394658f0-7248-4433-bb09-9af484b2a59c.png" alt="Sustainability Engineering" className="object-cover w-full h-full" />
+                  <img src="/lovable-uploads/a04f28ae-ca31-48dc-b38a-e92c96ea9c1a.png" alt="Sustainability Engineering" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><Recycle className="w-8 h-8" /></div>
