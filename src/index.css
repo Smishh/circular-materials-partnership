@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,6 +11,9 @@
   body {
     @apply bg-background text-foreground font-['Inter'];
     -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Roboto'];
   }
 }
 
@@ -44,17 +46,22 @@ html {
   @apply text-gray-800;
 }
 
+/* Card title styling */
+.text-2xl.font-semibold.leading-none.tracking-tight {
+  @apply font-['Roboto'] font-bold;
+}
+
 /* Article styling */
 .prose h1 {
-  @apply text-3xl font-bold mb-4 text-primary;
+  @apply text-3xl font-bold mb-4 text-primary font-['Roboto'];
 }
 
 .prose h2 {
-  @apply text-2xl font-semibold mt-8 mb-4 text-primary;
+  @apply text-2xl font-semibold mt-8 mb-4 text-primary font-['Roboto'];
 }
 
 .prose h3 {
-  @apply text-xl font-medium mt-6 mb-3 text-primary;
+  @apply text-xl font-medium mt-6 mb-3 text-primary font-['Roboto'];
 }
 
 .prose p {
