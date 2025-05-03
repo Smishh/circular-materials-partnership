@@ -1,10 +1,17 @@
-import { useEffect, useRef } from "react";
-import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
+
+import { useEffect, useRef, useState } from "react";
+import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase, ChevronDown } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import LogoPatternBackground from "@/components/LogoPatternBackground";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({
+    civilStructural: false,
+    projectManagement: false,
+    sustainability: false
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -28,6 +35,13 @@ const Index = () => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
     }
+  };
+
+  const toggleSection = (section: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
   };
 
   return <div className="min-h-screen">
@@ -82,111 +96,150 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
 
           {/* Civil and Structural Engineering Section */}
           <div className="mb-16">
-            <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Civil and Structural Engineering</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
-                <AspectRatio ratio={16 / 9}>
-                  <img src="/lovable-uploads/6c30ec4f-0271-4741-9de2-bd883671e9d6.png" alt="Structural Design" className="object-cover w-full h-full" />
-                </AspectRatio>
-                <div className="p-6">
-                  <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Structural Design</h3>
-                  <p className="text-muted-foreground">We take responsibility for the design of structures on your project, from planning, concept design, detailed design, supervision and completion. Review our previous projects here. </p>
-                </div>
+            <Collapsible 
+              open={openSections.civilStructural} 
+              onOpenChange={() => toggleSection('civilStructural')}
+              className="border-b border-gray-200 pb-4"
+            >
+              <div className="flex justify-between items-center">
+                <h3 className="text-2xl font-semibold text-primary">Civil and Structural Engineering</h3>
+                <CollapsibleTrigger className="flex items-center space-x-2 text-primary hover:text-primary/80 focus:outline-none">
+                  <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${openSections.civilStructural ? 'rotate-180' : ''}`} />
+                </CollapsibleTrigger>
               </div>
+              <CollapsibleContent className="pt-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift rounded-xl overflow-hidden">
+                    <AspectRatio ratio={16 / 9}>
+                      <img src="/lovable-uploads/6c30ec4f-0271-4741-9de2-bd883671e9d6.png" alt="Structural Design" className="object-cover w-full h-full" />
+                    </AspectRatio>
+                    <div className="p-6">
+                      <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
+                      <h3 className="text-xl font-semibold mb-2 text-primary">Structural Design</h3>
+                      <p className="text-muted-foreground">We take responsibility for the design of structures on your project, from planning, concept design, detailed design, supervision and completion. Review our previous projects here. </p>
+                    </div>
+                  </div>
 
-              {/* Buildings and Residential Design card */}
-              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F2FCE2] to-[#C6E6C5] hover:from-[#E2ECD2] hover:to-[#B6D6B5] transition-colors hover-lift">
-                <AspectRatio ratio={16 / 9}>
-                  <img src="/lovable-uploads/5fe76a79-f29c-4467-934a-a64555a3ba9e.png" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
-                </AspectRatio>
-                <div className="p-6">
-                  <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Buildings and Residential Design</h3>
-                  <p className="text-muted-foreground">Comprehensive residential design with sustainable building systems</p>
-                </div>
-              </div>
+                  {/* Buildings and Residential Design card */}
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#F2FCE2] to-[#C6E6C5] hover:from-[#E2ECD2] hover:to-[#B6D6B5] transition-colors hover-lift rounded-xl overflow-hidden">
+                    <AspectRatio ratio={16 / 9}>
+                      <img src="/lovable-uploads/5fe76a79-f29c-4467-934a-a64555a3ba9e.png" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
+                    </AspectRatio>
+                    <div className="p-6">
+                      <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
+                      <h3 className="text-xl font-semibold mb-2 text-primary">Buildings and Residential Design</h3>
+                      <p className="text-muted-foreground">Comprehensive residential design with sustainable building systems</p>
+                    </div>
+                  </div>
 
-              {/* Transportation Engineering card */}
-              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F2FCE2] to-[#C6E6C5] hover:from-[#E2ECD2] hover:to-[#B6D6B5] transition-colors hover-lift">
-                <AspectRatio ratio={16 / 9}>
-                  <img src="/lovable-uploads/b5ec8f1c-16d7-44f7-a423-a79f6984dfc3.png" alt="Transportation Engineering" className="object-cover w-full h-full" />
-                </AspectRatio>
-                <div className="p-6">
-                  <div className="mb-4 text-primary"><Car className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Transportation Engineering</h3>
-                  <p className="text-muted-foreground">Transport Impact Assessment, Master Planning, and Road Safety Audits</p>
-                </div>
-              </div>
+                  {/* Transportation Engineering card */}
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#F2FCE2] to-[#C6E6C5] hover:from-[#E2ECD2] hover:to-[#B6D6B5] transition-colors hover-lift rounded-xl overflow-hidden">
+                    <AspectRatio ratio={16 / 9}>
+                      <img src="/lovable-uploads/b5ec8f1c-16d7-44f7-a423-a79f6984dfc3.png" alt="Transportation Engineering" className="object-cover w-full h-full" />
+                    </AspectRatio>
+                    <div className="p-6">
+                      <div className="mb-4 text-primary"><Car className="w-8 h-8" /></div>
+                      <h3 className="text-xl font-semibold mb-2 text-primary">Transportation Engineering</h3>
+                      <p className="text-muted-foreground">Transport Impact Assessment, Master Planning, and Road Safety Audits</p>
+                    </div>
+                  </div>
 
-              {/* Structural Integrity card */}
-              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
-                <AspectRatio ratio={16 / 9}>
-                  <img src="/lovable-uploads/1d16b99d-61e6-4bba-925c-bebe7c85e4b1.png" alt="Structural Integrity" className="object-cover w-full h-full" />
-                </AspectRatio>
-                <div className="p-6">
-                  <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Structural Integrity, Durability and Maintenance of Structures</h3>
-                  <p className="text-muted-foreground">Civil Engineering, Condition Assessments, and Asset Management</p>
+                  {/* Structural Integrity card */}
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift rounded-xl overflow-hidden">
+                    <AspectRatio ratio={16 / 9}>
+                      <img src="/lovable-uploads/1d16b99d-61e6-4bba-925c-bebe7c85e4b1.png" alt="Structural Integrity" className="object-cover w-full h-full" />
+                    </AspectRatio>
+                    <div className="p-6">
+                      <div className="mb-4 text-primary"><Building2 className="w-8 h-8" /></div>
+                      <h3 className="text-xl font-semibold mb-2 text-primary">Structural Integrity, Durability and Maintenance of Structures</h3>
+                      <p className="text-muted-foreground">Civil Engineering, Condition Assessments, and Asset Management</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </CollapsibleContent>
+            </Collapsible>
           </div>
 
           {/* Project Management Section */}
           <div className="mb-16">
-            <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Project Management</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift">
-                <AspectRatio ratio={16 / 9}>
-                  <img src="/lovable-uploads/03cef32f-160f-4cbc-8a75-a0b6e2283011.png" alt="Project Planning & Control" className="object-cover w-full h-full object-center brightness-95 contrast-105" />
-                </AspectRatio>
-                <div className="p-6">
-                  <div className="mb-4 text-primary"><List className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Project Planning & Control</h3>
-                  <p className="text-muted-foreground">Strategic project planning, scheduling, and monitoring for optimal delivery</p>
-                </div>
+            <Collapsible 
+              open={openSections.projectManagement} 
+              onOpenChange={() => toggleSection('projectManagement')}
+              className="border-b border-gray-200 pb-4"
+            >
+              <div className="flex justify-between items-center">
+                <h3 className="text-2xl font-semibold text-primary">Project Management</h3>
+                <CollapsibleTrigger className="flex items-center space-x-2 text-primary hover:text-primary/80 focus:outline-none">
+                  <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${openSections.projectManagement ? 'rotate-180' : ''}`} />
+                </CollapsibleTrigger>
               </div>
+              <CollapsibleContent className="pt-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift rounded-xl overflow-hidden">
+                    <AspectRatio ratio={16 / 9}>
+                      <img src="/lovable-uploads/03cef32f-160f-4cbc-8a75-a0b6e2283011.png" alt="Project Planning & Control" className="object-cover w-full h-full object-center brightness-95 contrast-105" />
+                    </AspectRatio>
+                    <div className="p-6">
+                      <div className="mb-4 text-primary"><List className="w-8 h-8" /></div>
+                      <h3 className="text-xl font-semibold mb-2 text-primary">Project Planning & Control</h3>
+                      <p className="text-muted-foreground">Strategic project planning, scheduling, and monitoring for optimal delivery</p>
+                    </div>
+                  </div>
 
-              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift">
-                <AspectRatio ratio={16 / 9}>
-                  <img src="/lovable-uploads/729ce36c-0ff7-4e6c-8fe7-e6b0345e37c1.png" alt="Construction Management" className="object-cover w-full h-full" />
-                </AspectRatio>
-                <div className="p-6">
-                  <div className="mb-4 text-primary"><Briefcase className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Construction Management</h3>
-                  <p className="text-muted-foreground">Comprehensive construction supervision and contract administration</p>
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift rounded-xl overflow-hidden">
+                    <AspectRatio ratio={16 / 9}>
+                      <img src="/lovable-uploads/729ce36c-0ff7-4e6c-8fe7-e6b0345e37c1.png" alt="Construction Management" className="object-cover w-full h-full" />
+                    </AspectRatio>
+                    <div className="p-6">
+                      <div className="mb-4 text-primary"><Briefcase className="w-8 h-8" /></div>
+                      <h3 className="text-xl font-semibold mb-2 text-primary">Construction Management</h3>
+                      <p className="text-muted-foreground">Comprehensive construction supervision and contract administration</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </CollapsibleContent>
+            </Collapsible>
           </div>
 
           {/* Sustainability and Process Engineering Section */}
           <div>
-            <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Sustainability and Process Engineering</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
-                <AspectRatio ratio={16 / 9}>
-                  <img src="/lovable-uploads/a04f28ae-ca31-48dc-b38a-e92c96ea9c1a.png" alt="Sustainability Engineering" className="object-cover w-full h-full" />
-                </AspectRatio>
-                <div className="p-6">
-                  <div className="mb-4 text-primary"><Recycle className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Sustainability Engineering</h3>
-                  <p className="text-muted-foreground">Life Cycle Assessment, Carbon Footprinting, and Carbon Tax Consulting</p>
-                </div>
+            <Collapsible 
+              open={openSections.sustainability} 
+              onOpenChange={() => toggleSection('sustainability')}
+              className="border-b border-gray-200 pb-4"
+            >
+              <div className="flex justify-between items-center">
+                <h3 className="text-2xl font-semibold text-primary">Sustainability and Process Engineering</h3>
+                <CollapsibleTrigger className="flex items-center space-x-2 text-primary hover:text-primary/80 focus:outline-none">
+                  <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${openSections.sustainability ? 'rotate-180' : ''}`} />
+                </CollapsibleTrigger>
               </div>
+              <CollapsibleContent className="pt-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift rounded-xl overflow-hidden">
+                    <AspectRatio ratio={16 / 9}>
+                      <img src="/lovable-uploads/a04f28ae-ca31-48dc-b38a-e92c96ea9c1a.png" alt="Sustainability Engineering" className="object-cover w-full h-full" />
+                    </AspectRatio>
+                    <div className="p-6">
+                      <div className="mb-4 text-primary"><Recycle className="w-8 h-8" /></div>
+                      <h3 className="text-xl font-semibold mb-2 text-primary">Sustainability Engineering</h3>
+                      <p className="text-muted-foreground">Life Cycle Assessment, Carbon Footprinting, and Carbon Tax Consulting</p>
+                    </div>
+                  </div>
 
-              <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
-                <AspectRatio ratio={16 / 9}>
-                  <img src="/lovable-uploads/d2d91bd1-d30f-4f25-8695-578eb7d1c431.png" alt="Mining and Industrial Waste Beneficiation" className="object-cover w-full h-full" />
-                </AspectRatio>
-                <div className="p-6">
-                  <div className="mb-4 text-primary"><LineChart className="w-8 h-8" /></div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">Mining and Industrial Waste Beneficiation</h3>
-                  <p className="text-muted-foreground">Industrial Waste Utilization and Construction Materials Advisory</p>
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift rounded-xl overflow-hidden">
+                    <AspectRatio ratio={16 / 9}>
+                      <img src="/lovable-uploads/d2d91bd1-d30f-4f25-8695-578eb7d1c431.png" alt="Mining and Industrial Waste Beneficiation" className="object-cover w-full h-full" />
+                    </AspectRatio>
+                    <div className="p-6">
+                      <div className="mb-4 text-primary"><LineChart className="w-8 h-8" /></div>
+                      <h3 className="text-xl font-semibold mb-2 text-primary">Mining and Industrial Waste Beneficiation</h3>
+                      <p className="text-muted-foreground">Industrial Waste Utilization and Construction Materials Advisory</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </CollapsibleContent>
+            </Collapsible>
           </div>
         </div>
       </section>
@@ -226,3 +279,4 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
 };
 
 export default Index;
+

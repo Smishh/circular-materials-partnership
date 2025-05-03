@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap');
 
 @tailwind base;
@@ -49,6 +50,20 @@ html {
 /* Card title styling */
 .text-2xl.font-semibold.leading-none.tracking-tight {
   @apply font-['Roboto'] font-bold;
+}
+
+/* Collapsible section styling */
+[data-state="open"] .rotate-180 {
+  transform: rotate(180deg);
+}
+
+[data-state="closed"] .rotate-180 {
+  transform: rotate(0deg);
+}
+
+/* Service section collapsible styling */
+.border-b {
+  @apply border-gray-100;
 }
 
 /* Article styling */
