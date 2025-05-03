@@ -45,10 +45,28 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-visible text-sm data-[state=closed]:animate-none data-[state=open]:animate-none"
+    className="overflow-visible text-sm"
+    style={{
+      position: 'relative',
+      zIndex: 30,
+      height: 'auto !important',
+      visibility: 'visible',
+      overflow: 'visible',
+      display: 'block'
+    }}
     {...props}
   >
-    <div className={cn("pb-4 pt-2 overflow-visible", className)}>{children}</div>
+    <div 
+      className={cn("pb-6 pt-2 overflow-visible", className)}
+      style={{
+        position: 'relative',
+        zIndex: 30,
+        overflow: 'visible',
+        height: 'auto'
+      }}
+    >
+      {children}
+    </div>
   </AccordionPrimitive.Content>
 ))
 

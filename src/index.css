@@ -77,23 +77,30 @@ html {
 }
 
 /* Fix Radix UI components visibility issues */
-[data-radix-collapsible-content] {
+[data-radix-collapsible-content],
+[data-radix-accordion-content] {
   overflow: visible !important;
   display: block !important;
   height: auto !important;
   visibility: visible !important;
   opacity: 1 !important;
   transition: none !important;
+  position: relative !important;
+  z-index: 30 !important;
 }
 
 [data-state="open"] {
   overflow: visible !important;
   height: auto !important;
+  display: block !important;
+  visibility: visible !important;
 }
 
 /* Stop animations that might be causing issues */
 .data-\[state\=closed\]\:animate-accordion-up,
-.data-\[state\=open\]\:animate-accordion-down {
+.data-\[state\=open\]\:animate-accordion-down,
+.data-\[state\=closed\]\:animate-collapsible-up,
+.data-\[state\=open\]\:animate-collapsible-down {
   animation: none !important;
 }
 
@@ -132,4 +139,18 @@ html {
 
 .prose img {
   @apply rounded-lg my-6 max-w-full mx-auto;
+}
+
+/* Forcefully show service section when expanded */
+[data-state="open"] .grid {
+  visibility: visible !important;
+  display: grid !important;
+  opacity: 1 !important;
+  z-index: 50 !important;
+  position: relative !important;
+}
+
+.bg-gradient-to-br {
+  z-index: 40 !important;
+  position: relative !important;
 }

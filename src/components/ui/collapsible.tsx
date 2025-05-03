@@ -14,12 +14,30 @@ const CollapsibleContent = React.forwardRef<
   <CollapsiblePrimitive.Content
     ref={ref}
     className={cn(
-      "overflow-visible data-[state=closed]:animate-none data-[state=open]:animate-none",
+      "overflow-visible",
       className
     )}
+    style={{
+      position: 'relative',
+      zIndex: 30,
+      height: 'auto',
+      visibility: 'visible',
+      overflow: 'visible',
+      display: 'block'
+    }}
     {...props}
   >
-    <div className="overflow-visible py-2">{children}</div>
+    <div 
+      className="overflow-visible py-4"
+      style={{
+        position: 'relative',
+        zIndex: 30,
+        overflow: 'visible',
+        height: 'auto'
+      }}
+    >
+      {children}
+    </div>
   </CollapsiblePrimitive.Content>
 ))
 
