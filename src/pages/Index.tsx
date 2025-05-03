@@ -1,10 +1,11 @@
-
 import { useEffect, useRef } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import LogoPatternBackground from "@/components/LogoPatternBackground";
+
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -15,16 +16,20 @@ const Index = () => {
     }, {
       threshold: 0.1
     });
+
     revealRefs.current.forEach(ref => observer.observe(ref));
+
     return () => {
       observer.disconnect();
     };
   }, []);
+
   const addToRefs = (el: HTMLDivElement) => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
     }
   };
+
   return <div className="min-h-screen">
       {/* Hero Section - reduced height */}
       <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
@@ -162,7 +167,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
                 <AspectRatio ratio={16 / 9}>
-                  <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b" alt="Sustainability Engineering" className="object-cover w-full h-full" />
+                  <img src="/lovable-uploads/394658f0-7248-4433-bb09-9af484b2a59c.png" alt="Sustainability Engineering" className="object-cover w-full h-full" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="mb-4 text-primary"><Recycle className="w-8 h-8" /></div>
@@ -219,4 +224,5 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
       </section>
     </div>;
 };
+
 export default Index;
