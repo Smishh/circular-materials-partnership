@@ -66,6 +66,11 @@ html {
   @apply border-gray-100;
 }
 
+/* Remove underline from collapsible trigger */
+.collapsible-trigger:hover {
+  text-decoration: none;
+}
+
 /* Article styling */
 .prose h1 {
   @apply text-3xl font-bold mb-4 text-primary font-['Roboto'];

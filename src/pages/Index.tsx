@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase, ChevronDown } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -103,13 +102,13 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
             >
               <div className="flex justify-between items-center">
                 <h3 className="text-2xl font-semibold text-primary">Civil and Structural Engineering</h3>
-                <CollapsibleTrigger className="flex items-center space-x-2 text-primary hover:text-primary/80 focus:outline-none">
+                <CollapsibleTrigger className="flex items-center space-x-2 text-primary hover:text-primary/80 focus:outline-none collapsible-trigger">
                   <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${openSections.civilStructural ? 'rotate-180' : ''}`} />
                 </CollapsibleTrigger>
               </div>
               <CollapsibleContent className="pt-6">
                 <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift rounded-xl overflow-hidden">
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift rounded-xl overflow-hidden shadow-md">
                     <AspectRatio ratio={16 / 9}>
                       <img src="/lovable-uploads/6c30ec4f-0271-4741-9de2-bd883671e9d6.png" alt="Structural Design" className="object-cover w-full h-full" />
                     </AspectRatio>
@@ -121,7 +120,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                   </div>
 
                   {/* Buildings and Residential Design card */}
-                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#F2FCE2] to-[#C6E6C5] hover:from-[#E2ECD2] hover:to-[#B6D6B5] transition-colors hover-lift rounded-xl overflow-hidden">
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#F2FCE2] to-[#C6E6C5] hover:from-[#E2ECD2] hover:to-[#B6D6B5] transition-colors hover-lift rounded-xl overflow-hidden shadow-md">
                     <AspectRatio ratio={16 / 9}>
                       <img src="/lovable-uploads/5fe76a79-f29c-4467-934a-a64555a3ba9e.png" alt="Buildings and Residential Design" className="object-cover w-full h-full" />
                     </AspectRatio>
@@ -133,7 +132,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                   </div>
 
                   {/* Transportation Engineering card */}
-                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#F2FCE2] to-[#C6E6C5] hover:from-[#E2ECD2] hover:to-[#B6D6B5] transition-colors hover-lift rounded-xl overflow-hidden">
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#F2FCE2] to-[#C6E6C5] hover:from-[#E2ECD2] hover:to-[#B6D6B5] transition-colors hover-lift rounded-xl overflow-hidden shadow-md">
                     <AspectRatio ratio={16 / 9}>
                       <img src="/lovable-uploads/b5ec8f1c-16d7-44f7-a423-a79f6984dfc3.png" alt="Transportation Engineering" className="object-cover w-full h-full" />
                     </AspectRatio>
@@ -145,7 +144,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                   </div>
 
                   {/* Structural Integrity card */}
-                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift rounded-xl overflow-hidden">
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift rounded-xl overflow-hidden shadow-md">
                     <AspectRatio ratio={16 / 9}>
                       <img src="/lovable-uploads/1d16b99d-61e6-4bba-925c-bebe7c85e4b1.png" alt="Structural Integrity" className="object-cover w-full h-full" />
                     </AspectRatio>
@@ -169,13 +168,13 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
             >
               <div className="flex justify-between items-center">
                 <h3 className="text-2xl font-semibold text-primary">Project Management</h3>
-                <CollapsibleTrigger className="flex items-center space-x-2 text-primary hover:text-primary/80 focus:outline-none">
+                <CollapsibleTrigger className="flex items-center space-x-2 text-primary hover:text-primary/80 focus:outline-none collapsible-trigger">
                   <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${openSections.projectManagement ? 'rotate-180' : ''}`} />
                 </CollapsibleTrigger>
               </div>
               <CollapsibleContent className="pt-6">
                 <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift rounded-xl overflow-hidden">
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift rounded-xl overflow-hidden shadow-md">
                     <AspectRatio ratio={16 / 9}>
                       <img src="/lovable-uploads/03cef32f-160f-4cbc-8a75-a0b6e2283011.png" alt="Project Planning & Control" className="object-cover w-full h-full object-center brightness-95 contrast-105" />
                     </AspectRatio>
@@ -186,7 +185,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                     </div>
                   </div>
 
-                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift rounded-xl overflow-hidden">
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#F5E1C1] to-[#E8D0A9] hover:from-[#E8D0A9] hover:to-[#D6BF97] transition-colors hover-lift rounded-xl overflow-hidden shadow-md">
                     <AspectRatio ratio={16 / 9}>
                       <img src="/lovable-uploads/729ce36c-0ff7-4e6c-8fe7-e6b0345e37c1.png" alt="Construction Management" className="object-cover w-full h-full" />
                     </AspectRatio>
@@ -210,13 +209,13 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
             >
               <div className="flex justify-between items-center">
                 <h3 className="text-2xl font-semibold text-primary">Sustainability and Process Engineering</h3>
-                <CollapsibleTrigger className="flex items-center space-x-2 text-primary hover:text-primary/80 focus:outline-none">
+                <CollapsibleTrigger className="flex items-center space-x-2 text-primary hover:text-primary/80 focus:outline-none collapsible-trigger">
                   <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${openSections.sustainability ? 'rotate-180' : ''}`} />
                 </CollapsibleTrigger>
               </div>
               <CollapsibleContent className="pt-6">
                 <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift rounded-xl overflow-hidden">
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift rounded-xl overflow-hidden shadow-md">
                     <AspectRatio ratio={16 / 9}>
                       <img src="/lovable-uploads/a04f28ae-ca31-48dc-b38a-e92c96ea9c1a.png" alt="Sustainability Engineering" className="object-cover w-full h-full" />
                     </AspectRatio>
@@ -227,7 +226,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                     </div>
                   </div>
 
-                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift rounded-xl overflow-hidden">
+                  <div ref={addToRefs} className="reveal bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift rounded-xl overflow-hidden shadow-md">
                     <AspectRatio ratio={16 / 9}>
                       <img src="/lovable-uploads/d2d91bd1-d30f-4f25-8695-578eb7d1c431.png" alt="Mining and Industrial Waste Beneficiation" className="object-cover w-full h-full" />
                     </AspectRatio>
@@ -279,4 +278,3 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
 };
 
 export default Index;
-
