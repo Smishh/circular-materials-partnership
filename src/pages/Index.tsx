@@ -46,7 +46,7 @@ const Index = () => {
               <img src="/lovable-uploads/8a8c6a80-5bd8-48bf-aa22-01e80ef02631.png" alt="CMIG Logo" className="w-24 h-24 md:w-28 md:h-28" />
             </div>
             
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight drop-shadow-lg text-blue-50">
+            <h1 className="text-3xl font-bold mb-6 tracking-tight drop-shadow-lg text-blue-50 md:text-5xl">
               Circular Materials and<br />Infrastructure Group
             </h1>
             {/* Refined white strip with improved typography and spacing - reduced padding */}
