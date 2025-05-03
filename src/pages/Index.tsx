@@ -1,12 +1,9 @@
-
 import { useEffect, useRef } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import LogoPatternBackground from "@/components/LogoPatternBackground";
-
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
-  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -17,20 +14,16 @@ const Index = () => {
     }, {
       threshold: 0.1
     });
-    
     revealRefs.current.forEach(ref => observer.observe(ref));
-    
     return () => {
       observer.disconnect();
     };
   }, []);
-  
   const addToRefs = (el: HTMLDivElement) => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
     }
   };
-  
   return <div className="min-h-screen">
       {/* Hero Section - reduced height */}
       <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
@@ -122,7 +115,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
                     <Car className="w-6 h-6 text-primary mr-2" />
                     <h3 className="text-xl font-semibold text-primary">Transportation Engineering</h3>
                   </div>
-                  <p className="text-muted-foreground">Transport Impact Assessment, Master Planning, and Road Safety Audits</p>
+                  <p className="text-muted-foreground">Transport infrastructure services include road safety audits, transportation planning and masterplan development. </p>
                 </div>
               </div>
 
@@ -176,7 +169,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
 
           {/* Sustainability and Process Engineering Section */}
           <div>
-            <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Sustainability and Process Engineering</h3>
+            <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Environment, Sustainability and Circularity</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#C6E6D4] to-[#A3D1B8] hover:from-[#B4D6C5] hover:to-[#91C3A6] transition-colors hover-lift">
                 <AspectRatio ratio={16 / 9}>
@@ -241,5 +234,4 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
       </section>
     </div>;
 };
-
 export default Index;
