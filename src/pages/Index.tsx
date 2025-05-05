@@ -69,9 +69,10 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
         <div className="container mx-auto relative z-10">
           <div ref={addToRefs} className="reveal text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-primary">Our Services</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive solutions for sustainable infrastructure and materials engineering
-            </p>
+            <p className="text-muted-foreground max-w-2xl mx-auto">At CMIG, we engineer structures to last. Our team combines cutting-edge, sustainable materials with meticulous design to deliver buildings, bridges, and industrial assets that stand the test of time. From concept-to-handover structural design and advanced cementitious technologies, to life-cycle carbon assessments and proactive maintenance, our comprehensive solutions maximize safety, durability and value.
+
+
+Work with CMIG for disciplined project delivery that keeps you on-spec, on-schedule and on-budget. Partner with us to bring your vision to life with infrastructure that is code-compliant, cost-effective, long-lasting, and sustainable. Together, we can build a more resilient future.</p>
           </div>
 
           {/* Civil and Structural Engineering Section */}
