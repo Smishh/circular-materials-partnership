@@ -80,7 +80,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               <div ref={addToRefs} className="reveal rounded-xl overflow-hidden bg-gradient-to-br from-[#D3E4FD] to-[#A2C4F5] hover:from-[#C0D6F3] hover:to-[#8EB3E6] transition-colors hover-lift">
                 <AspectRatio ratio={16 / 9}>
-                  <img src="/lovable-uploads/6c30ec4f-0271-4741-9de2-bd883671e9d6.png" alt="Structural Design" className="object-cover w-full h-full" />
+                  <img alt="Structural Design" className="object-cover w-full h-full" src="/lovable-uploads/4d4eb302-5ffa-4063-b2b1-4e0c9d9d2939.png" />
                 </AspectRatio>
                 <div className="p-6">
                   <div className="flex items-center mb-2">
