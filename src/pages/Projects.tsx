@@ -24,12 +24,12 @@ const Projects = () => {
         </div>
         
         <div className="space-y-24 max-w-6xl mx-auto">
-          {/* Design of Structures - L-shaped layout */}
+          {/* Design of Structures */}
           <Card className="overflow-hidden bg-white/50 border border-[#eee] shadow-sm">
             <CardContent className="p-6">
               <div className="flex flex-col md:flex-row gap-8">
-                {/* Image section - explicitly set to 33% width on desktop */}
-                <div className="md:w-1/3 shrink-0">
+                {/* Image section - reduced by 50% */}
+                <div className="md:w-1/3 shrink-0 mx-auto md:mx-0" style={{ maxWidth: "50%" }}>
                   <Carousel className="w-full">
                     <CarouselContent>
                       <CarouselItem>
@@ -56,7 +56,7 @@ const Projects = () => {
                   </Carousel>
                 </div>
                 
-                {/* Content section - L-shaped around the image, explicitly set to 66% width */}
+                {/* Content section */}
                 <div className="md:w-2/3">
                   <div className="flex items-center gap-4 mb-6">
                     <Building className="w-8 h-8 text-primary" />
@@ -102,12 +102,12 @@ const Projects = () => {
             </CardContent>
           </Card>
 
-          {/* Condition Assessment and Diagnostics - L-shaped layout */}
+          {/* Condition Assessment and Diagnostics */}
           <Card className="overflow-hidden bg-white/50 border border-[#eee] shadow-sm">
             <CardContent className="p-6">
               <div className="flex flex-col md:flex-row gap-8">
-                {/* Image section - explicitly set to 33% width on desktop */}
-                <div className="md:w-1/3 shrink-0">
+                {/* Image section - reduced by 50% */}
+                <div className="md:w-1/3 shrink-0 mx-auto md:mx-0" style={{ maxWidth: "50%" }}>
                   <Carousel className="w-full">
                     <CarouselContent>
                       <CarouselItem>
@@ -134,7 +134,7 @@ const Projects = () => {
                   </Carousel>
                 </div>
                 
-                {/* Content section - L-shaped around the image, explicitly set to 66% width */}
+                {/* Content section */}
                 <div className="md:w-2/3">
                   <div className="flex items-center gap-4 mb-6">
                     <Wrench className="w-8 h-8 text-primary" />
