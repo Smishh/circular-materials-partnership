@@ -2,8 +2,10 @@ import { useEffect, useRef } from "react";
 import { Building2, Recycle, LineChart, Car, Mail, Phone, List, Briefcase } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import LogoPatternBackground from "@/components/LogoPatternBackground";
+
 const Index = () => {
   const revealRefs = useRef<HTMLDivElement[]>([]);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -14,16 +16,20 @@ const Index = () => {
     }, {
       threshold: 0.1
     });
+
     revealRefs.current.forEach(ref => observer.observe(ref));
+
     return () => {
       observer.disconnect();
     };
   }, []);
+
   const addToRefs = (el: HTMLDivElement) => {
     if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
     }
   };
+
   return <div className="min-h-screen">
       {/* Hero Section - reduced height */}
       <section className="relative h-[75vh] flex items-center justify-center overflow-hidden">
@@ -69,7 +75,7 @@ Explore our Knowledge Center for industry insights and our Materials Eco Store f
         <div className="container mx-auto relative z-10">
           <div ref={addToRefs} className="reveal text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-primary">Our Services</h2>
-            <p className="text-muted-foreground mx-auto">At CMIG, we engineer structures to last. Our team combines cutting-edge, sustainable materials with meticulous design to deliver buildings, bridges, and industrial assets that stand the test of time. From concept-to-handover structural design and advanced cementitious technologies, to life-cycle carbon assessments and proactive maintenance, our comprehensive solutions maximize safety, durability and value.
+            <p className="text-muted-foreground mx-auto bg-white p-4 rounded-md">At CMIG, we engineer structures to last. Our team combines cutting-edge, sustainable materials with meticulous design to deliver buildings, bridges, and industrial assets that stand the test of time. From concept-to-handover structural design and advanced cementitious technologies, to life-cycle carbon assessments and proactive maintenance, our comprehensive solutions maximize safety, durability and value.
 
 
 Work with CMIG for disciplined project delivery that keeps you on-spec, on-schedule and on-budget. Partner with us to bring your vision to life with infrastructure that is code-compliant, cost-effective, long-lasting, and sustainable. Together, we can build a more resilient future.</p>
@@ -235,4 +241,5 @@ Work with CMIG for disciplined project delivery that keeps you on-spec, on-sched
       </section>
     </div>;
 };
+
 export default Index;
