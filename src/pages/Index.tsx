@@ -31,13 +31,13 @@ const Index = () => {
         <div className="absolute inset-0 w-full h-full">
           {/* Using new image as background overlay with reduced opacity */}
           <div className="absolute inset-0 bg-cover bg-center z-[2]" style={{
-          backgroundImage: `url("/lovable-uploads/1ea32cab-fe93-4387-967e-900cd2803011.png")`,
+          backgroundImage: `url("/lovable-uploads/420abaf2-b6b5-49fc-bd1e-cee334e18141.png")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.7
+          opacity: 0.9
         }}></div>
           {/* Adding a dark overlay for better contrast */}
-          <div className="absolute inset-0 bg-black opacity-40 z-[3]"></div>
+          <div className="absolute inset-0 bg-black opacity-50 z-[3]"></div>
         </div>
         
         <div className="container mx-auto text-center z-10">
