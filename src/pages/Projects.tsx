@@ -28,7 +28,7 @@ const Projects = () => {
           <Card className="overflow-hidden bg-white/50 border border-[#eee] shadow-sm">
             <CardContent className="p-6">
               <div className="flex flex-col md:flex-row gap-8">
-                {/* Image section - around 33% width on desktop */}
+                {/* Image section - explicitly set to 33% width on desktop */}
                 <div className="md:w-1/3 shrink-0">
                   <Carousel className="w-full">
                     <CarouselContent>
@@ -56,7 +56,7 @@ const Projects = () => {
                   </Carousel>
                 </div>
                 
-                {/* Content section - L-shaped around the image */}
+                {/* Content section - L-shaped around the image, explicitly set to 66% width */}
                 <div className="md:w-2/3">
                   <div className="flex items-center gap-4 mb-6">
                     <Building className="w-8 h-8 text-primary" />
@@ -106,7 +106,7 @@ const Projects = () => {
           <Card className="overflow-hidden bg-white/50 border border-[#eee] shadow-sm">
             <CardContent className="p-6">
               <div className="flex flex-col md:flex-row gap-8">
-                {/* Image section - around 33% width on desktop */}
+                {/* Image section - explicitly set to 33% width on desktop */}
                 <div className="md:w-1/3 shrink-0">
                   <Carousel className="w-full">
                     <CarouselContent>
@@ -134,7 +134,7 @@ const Projects = () => {
                   </Carousel>
                 </div>
                 
-                {/* Content section - L-shaped around the image */}
+                {/* Content section - L-shaped around the image, explicitly set to 66% width */}
                 <div className="md:w-2/3">
                   <div className="flex items-center gap-4 mb-6">
                     <Wrench className="w-8 h-8 text-primary" />
